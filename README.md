@@ -159,9 +159,9 @@ pip install pysondb<br>
 pip install simpleaudio<br>
 
 Erzeugen eines Packages mit pyinstaller<br>
-    pyinstaller --onefile hm2.py<br>
+    pyinstaller --onefile HamMessenger2.py<br>
 
-files bereinigen und nach dist kopieren
+Files bereinigen und nach dist kopieren
 
 tar cvf HamMessenger2-x.x.x.tar dist
 
