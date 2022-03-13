@@ -1,0 +1,8 @@
+__pycache__/
+__pycache__
+build/
+build
+dist/HamMessenger2
+dist/*.exe
+builder/*.exe
+hgm.code-workspace
