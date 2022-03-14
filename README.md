@@ -43,14 +43,14 @@ MESHCOM: https://wiki.oevsv.at/wiki/Kategorie:MeshCom
 # HamMessenger Install 
 
 <br>
-<b>Alle Installationsprogramme findest du im github unter releases.</b><br>
+<b>Alle Installationsprogramme findest du im github unter Releases.</b><br>
 Nach der Installation müssen im Tab Setup zumindest das Rufzeichen, Name, QTH, Broadcast IP und Hamnet IP eingegeben werden.
 <br><br>
 
 ## WINDOWS
 
 <br>
-Download und install SetupHamMeseenger2-U.x.x.x.exe
+Download und install SetupHamMeseenger2-U.x.x.x.exe von Releases
 
 Es müssen keine Pakete mit pip werden.
 
@@ -58,7 +58,7 @@ Es müssen keine Pakete mit pip werden.
 
 ## Linux (Ubuntu):
 
-Download SetupHamMeseenger2-U.x.x.x.tar.gz 
+Download SetupHamMeseenger2-U.x.x.x.tar.gz von Releases
 
 tar -xvzf HamMessenger2-x.x.x.tar.gz
 
@@ -88,7 +88,7 @@ Es müssen keine Pakete mit pip oder apt installiert werden.
 todo<br><br>
 <br>
 
-## Installation vom Source Code
+# Installation vom Source Code
 
 <br>
 Sollte der Installer für das entsprechnde Betriebssytem nicht funktionieren, <br>
@@ -121,14 +121,22 @@ Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation ge
 
 ## Mac
 todo - Wer kann da know how beisteuern.<br><br>
-Die installation erfolgt wie unter "Installatin from Source" beschrieben funktionieren.
+Die installation erfolgt wie unter "Installation from Source" beschrieben.
+<br>
+<br>
 
-# Erzeugen der Install Programme
+# Erzeugen der Installer Programme
 
 ## Windows
 
 prerequisite:
 
+* install python3 <br>
+* pip install pyqt5<br>
+* pip install dark qdarkstyle<br>
+* pip install pysondb<br>
+* pip install simpleaudio<br>
+<br>
 * pip install pyinstaller
 * Download und install NSIS-Menu from https://nsis.sourceforge.io/Download
 * den NSIS Editor/assistent from http://hmne.sourceforge.net/
@@ -151,14 +159,13 @@ Erzeugen des Setupprogrammes mit NSIS Menu<br>
 
 
 
-
-
 ## Linux (Ubuntu)
 
 git clone https://github.com/oe5rnl/HamMessenger2.git
 
 install python3 <br>
 pip install pyqt5<br>
+pip install pytqt5-tools<br>
 pip install dark qdarkstyle<br>
 pip install pysondb<br>
 pip install simpleaudio<br>
@@ -181,14 +188,22 @@ tar xvf HamMessenger2-U.x.x.x.tar.gz
 
 # raspberry PI
 
+git clone https://github.com/oe5rnl/HamMessenger2.git<br>
+<br>
+pip install python3 # sollte schon installiert sein<br>
+pip install dark qdarkstyle<br>
+pip install pysondb<br>
+pip install simpleaudio<br>
+<br>
+
+sudo apt-get install python3-pyqt5<br>
+sudo apt-get install libqt5multimedia5-plugins qml-module-qtmultimedia<br>
+
+
 sudo apt-get install python3-pyqt5
 
 ?? sudo apt-get install libqt5multimedia5-plugins qml-module-qtmultimedia
 
-
-pip install dark qdarkstyle<br>
-pip install pysondb<br>
-pip install simpleaudio<br>
 
 
 Erzeugen eines Packages mit pyinstaller<br>
