@@ -118,7 +118,8 @@ Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation ge
 <br>
 
 ## Mac
-todo<br><br>
+todo - Wer kann da know how beisteuern.<br><br>
+Die installation erfolgt wie unter "Installatin from Source" beschrieben funktionieren.
 
 # Erzeugen der Install Programme
 
