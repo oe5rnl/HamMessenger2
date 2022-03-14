@@ -22,11 +22,11 @@ Er kann über den Link http://news.ampr.at/?page_id=462 aus dem HAMNET geladen w
 Getestet wurde das Programm auf folgende Betriebssystemen:<br>
 <br>
 
-* Ubuntu   20.04 LTS   
-* raspberry Pi ???
-* Mac      Test noch offen
-* Windows  10 
-* Windows  11
+* Ubuntu        20.04 LTS   
+* raspberry Pi  Raspian GNU/Linux 11 (bullseye)
+* Mac           -Test noch offen
+* Windows       10 
+* Windows       11
 
 Anregungen und Fehler bitte im github als Issue einmelden.
 
@@ -106,11 +106,11 @@ pip install pysondb<br>
 pip install simpleaudio<br>
 <br><br>
 Die folgenden Dateien werden normalerweise vom Installer angelegt.<br>
-In Fall der manuellen Installation müssen aus sie aus dem Verzeichnis hm2 <br>
+In Fall der manuellen Installation müssen aus sie aus dem Verzeichnis HamMessenger2 <br>
 in das Verzeihnis APPDATE\Roaming\HamMessenger2 des Users kopiert werden:<br>
 <br>
 mkdir C:\Users\reinh\AppData\Roaming\HamMessenger2\res<br>
-copy res* C:\Users\reinh\AppData\Roaming\HamMessenger2\\res<br>
+copy res* C:\Users\reinh\AppData\Roaming\HamMessenger2\res<br>
 copy groups.ini C:\Users\reinh\AppData\Roaming\HamMessenger2<br>
 <br>
 Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation geladen.<br>
@@ -120,8 +120,8 @@ Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation ge
 <br>
 
 ## Mac
-todo - Wer kann da know how beisteuern.<br><br>
-Die installation erfolgt wie unter "Installation from Source" beschrieben.
+todo - Wer kann da know how-beisteuern?<br><br>
+Die installation erfolgt derzeit wie unter "Installation from Source" beschrieben.
 <br>
 <br>
 
@@ -130,7 +130,7 @@ Die installation erfolgt wie unter "Installation from Source" beschrieben.
 ## Windows
 
 prerequisite:
-
+* git installieren
 * install python3 <br>
 * pip install pyqt5<br>
 * pip install dark qdarkstyle<br>
@@ -141,7 +141,7 @@ prerequisite:
 * Download und install NSIS-Menu from https://nsis.sourceforge.io/Download
 * den NSIS Editor/assistent from http://hmne.sourceforge.net/
 
-
+<br>
 Das Erzeugen des Installers erfolgt in drei Schritten:<br>
 
 Kopieren von Dateien in das Verzeichnis dist<br><br>
@@ -150,12 +150,14 @@ Kopieren von Dateien in das Verzeichnis dist<br><br>
     cp groups.ini dist/<br>
 <br>
 Erzeugen eines Packages mit pyinstaller<br>
-    pyinstaller --onefile hm2.py<br>
+    pyinstaller --onefile HamMessenger2.py<br>
 <br>
 Erzeugen des Setupprogrammes mit NSIS Menu<br>
     Start NSIS Menu<br>
+    Edit Version Info<br>
     Compile NSI scripts: HamMessenger2.nsi<br>
-    HM NIS Edit<br>
+    Ergebnis steht im Verzeichnis builder
+    Mit HM NIS Edit kann die nsi date bearbeitet werden.<br>
 
 
 
@@ -199,7 +201,7 @@ pip install pyinstaller<br>
 
 sudo apt-get install python3-pyqt5<br>
 sudo apt-get install pyqt5-dev-tools<br>
-install pyqt5 designer ???
+#install pyqt5-tools ???
 #sudo apt-get install libqt5multimedia5-plugins qml-module-qtmultimedia<br>
 
 Erzeugen eines Packages mit pyinstaller<br>
