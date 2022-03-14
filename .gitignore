@@ -7,11 +7,11 @@ dist/HamMessenger2-U.x.x.x.tar.gz
 dist/*.exe
 builder/*.exe
 hgm.code-workspace
-HamMessenger2
-HamMessenger2-U.x.x.x.tar.gz
+HamMessenger2*/
 HamMessenger2_log.json.lock
 HamMessenger2_log.json
 HamMessenger2_log
+HamMessenger2.log
 HM2.log
 dist-1
 prod
