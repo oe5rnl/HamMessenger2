@@ -194,32 +194,29 @@ pip install python3 # sollte schon installiert sein<br>
 pip install dark qdarkstyle<br>
 pip install pysondb<br>
 pip install simpleaudio<br>
+pip install pyinstaller<br>
 <br>
 
 sudo apt-get install python3-pyqt5<br>
-sudo apt-get install libqt5multimedia5-plugins qml-module-qtmultimedia<br>
-
-
-sudo apt-get install python3-pyqt5
-
-?? sudo apt-get install libqt5multimedia5-plugins qml-module-qtmultimedia
-
-
+sudo apt-get install pyqt5-dev-tools<br>
+install pyqt5 designer ???
+#sudo apt-get install libqt5multimedia5-plugins qml-module-qtmultimedia<br>
 
 Erzeugen eines Packages mit pyinstaller<br>
-    pyinstaller --onefile hm2.py<br>
 
-files bereinigen und nach dist kopieren
+cd HamMessenger2<br>
+pyinstaller --onefile HamMessenger2.py<br>
 
-tar cvf HamMessenger2-x.x.x.tar dist
+Bei Änderungen an den Files main.ui und goup.ui
+diese von Hammessenger2 nach dist kopieren.    
 
+cp -r dist HamMessenger2
+tar -czvf HamMessenger2-U.x.x.x.tar.gz HamMessenger2
+    
 am Ziel PC:
 
-tar cvf HamMessenger2-x.x.x.tar
+tar xvf HamMessenger2-U.x.x.x.tar.gz
 
-
-
-tar -xvzf may_arch.tar.gz
 
 
 

@@ -1,5 +1,24 @@
 {
    "data": [
-     
+      {
+         "PayloadTypeString": "ER",
+         "time": "2022-03-14 13:50:20",
+         "Source": "--",
+         "Contact": "--",
+         "payload": "Connection to the HAMGO module not possible.\nHAMGO Module offline or check Setup please",
+         "Path": "",
+         "date": "20220314",
+         "id": 313251106696850063
+      },
+      {
+         "PayloadTypeString": "OK",
+         "time": "2022-03-14 13:51:10",
+         "Source": "--",
+         "Contact": "--",
+         "payload": "Reconnect to the HAMGO Module done",
+         "Path": "",
+         "date": "20220314",
+         "id": 266537589534507396
+      }
    ]
 }
