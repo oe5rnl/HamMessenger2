@@ -50,11 +50,13 @@ Nach der Installation müssen im Tab Setup zumindest das Rufzeichen, Name, QTH, 
 <br>
 Download und install SetupHamMeseenger2-U.x.x.x.exe
 
+Es müssen keine Pakete mit pip werden.
+
 <br>
 
 ## Linux (Ubuntu):
 
-Download SetupHamMeseenger2-U.x.x.x.exe 
+Download SetupHamMeseenger2-U.x.x.x.tar.gz 
 
 tar -xvzf HamMessenger2-x.x.x.tar.gz
 
@@ -62,7 +64,7 @@ cd HamMessenger2
 
 starten mit:
 
-./hm2
+./HamMessenger2
 
 Es müssen keine Pakete mit pip oder apt installiert werden.
 
@@ -150,7 +152,7 @@ Erzeugen des Setupprogrammes mit NSIS Menu<br>
 
 ## Linux (Ubuntu)
 
-git clone
+git clone https://github.com/oe5rnl/HamMessenger2.git
 
 install python3 <br>
 pip install pyqt5<br>
@@ -159,15 +161,19 @@ pip install pysondb<br>
 pip install simpleaudio<br>
 
 Erzeugen eines Packages mit pyinstaller<br>
-    pyinstaller --onefile HamMessenger2.py<br>
 
-Files bereinigen und nach dist kopieren
+cd HamMessenger2<br>
+pyinstaller --onefile HamMessenger2.py<br>
 
-tar cvf HamMessenger2-x.x.x.tar dist
+Bei Änderungen an den Files main.ui und goup.ui
+diese von Hammessenger2 nach dist kopieren.    
 
+cp -r dist HamMessenger2
+tar -czvf HamMessenger2-U.x.x.x.tar.gz HamMessenger2
+    
 am Ziel PC:
 
-tar cvf HamMessenger2-x.x.x.tar
+tar xvf HamMessenger2-U.x.x.x.tar.gz
 
 
 # raspberry PI
@@ -221,3 +227,16 @@ apt-get install python3-pyqt5.qtmultimedia
 pip install pysondb
 
 pip install simpleaudio
+
+
+# pip install pyqt5
+# pip install dark qdarkstyle
+# pip install pysondb
+# pip install simpleaudio
+#
+# pyuic5 -x main.ui -o main-ui.py
+#
+# Raspberry PI 
+#
+# sudo apt-get install python3-pyqt5
+# sudo apt-get install libqt5multimedia5-plugins qml-module-qtmultimedia

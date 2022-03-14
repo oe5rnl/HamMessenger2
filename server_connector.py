@@ -49,7 +49,7 @@ class Server(com.Com,QObject):
     self.rx.stop()
     self.threadRx.quit()
     self.tcp.stop()
-    print('server-connector:main terminated')
+    #print('server-connector:main terminated')
     
   def reconnect(self, force=False):
     #print(time.strftime("%a, %d %b %Y %H:%M:%S")+ ' start method-reconnect')
@@ -116,7 +116,7 @@ class RX(QObject):
      
     def run(self):
 
-        print('server-connector: do_rx')
+        #print('server-connector: do_rx')
         #prctl.set_name("hgm:srv-con:do_rx")
       
         while self.running:

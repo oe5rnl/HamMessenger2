@@ -33,11 +33,8 @@ class Tcp:
     self.__connected = False
     time.sleep(1)
     #self.sock.shutdown(socket.SHUT_RDWR) 
-    # ???????????
     if self.sock is not None:
       self.sock.close()  
-    
-    
     
     print('TCP-socket closed !')
     

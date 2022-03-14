@@ -14,17 +14,7 @@
 #  based on     HamMessenger old base 1.5.4  14.05.2018  protocol 1
 # 
 # ===========================================================================
-# pip install pyqt5
-# pip install dark qdarkstyle
-# pip install pysondb
-# pip install simpleaudio
 #
-# pyuic5 -x main.ui -o main-ui.py
-#
-# Raspberry PI 
-#
-# sudo apt-get install python3-pyqt5
-# sudo apt-get install libqt5multimedia5-plugins qml-module-qtmultimedia
 #
 
 import sys
@@ -64,7 +54,7 @@ import qt_singleapp
 logger = logging.getLogger(__name__)
 
 
-logging.basicConfig(filename=get_OS.getUserDataPath()+'HM2.log', filemode='a', level=logging.DEBUG)
+logging.basicConfig(filename=get_OS.getUserDataPath()+'HamMessenger2.log', filemode='a', level=logging.DEBUG)
 
 def handle_unhandled_exception(exc_type, exc_value, exc_traceback):
     """Handler for unhandled exceptions that will write to the logs"""

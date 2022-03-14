@@ -3,6 +3,14 @@ __pycache__
 build/
 build
 dist/HamMessenger2
+dist/HamMessenger2-U.x.x.x.tar.gz
 dist/*.exe
 builder/*.exe
 hgm.code-workspace
+HamMessenger2
+HamMessenger2-U.x.x.x.tar.gz
+HamMessenger2_log.json.lock
+HM2.log
+
+
+
