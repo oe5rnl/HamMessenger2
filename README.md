@@ -174,9 +174,11 @@ prerequisite:
 Das Erzeugen des Installers erfolgt in drei Schritten:<br>
 
 Kopieren von Dateien in das Verzeichnis dist<br><br>
+    cd HamMessenger2
     cp main.ui dist/<br>
     cp newgroup.ui dist/<br>
     cp groups.ini dist/<br>
+    mkdir prod<br>
 <br>
 Erzeugen eines Packages mit pyinstaller<br>
     pyinstaller --onefile HamMessenger2.py<br>
@@ -204,6 +206,7 @@ pip install simpleaudio<br>
 Erzeugen eines Packages mit pyinstaller<br>
 
 cd HamMessenger2<br>
+mkdir prod<br>
 pyinstaller --onefile HamMessenger2.py<br>
 
 Bei Änderungen an den Files main.ui und goup.ui
@@ -236,6 +239,7 @@ sudo apt-get install pyqt5-dev-tools<br>
 Erzeugen eines Packages mit pyinstaller<br>
 
 cd HamMessenger2<br>
+mkdir prod<br>
 pyinstaller --onefile HamMessenger2.py<br>
 
 Bei Änderungen an den Files main.ui und goup.ui
