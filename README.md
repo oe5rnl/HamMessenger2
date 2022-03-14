@@ -6,7 +6,7 @@
 
 
 Der HAMGO Messenger Client lauft unter Windows, Linux und MAC.<br><br>
-<b>Diese Version ersetzt die alte PyGObject/Gtk3 Version aus dem Jahr 2018!!!</b><br>
+<b>Diese Version ersetzt die alte PyGObject/Gtk3 Linux Version aus dem Jahr 2018!!!</b><br>
 
 Der MultiPlatform-Client wurde von Reinhold OE5RNL und Manfed OE5NVL erstellt. <br>
 Er basiert auf dem Windows .NET Client von OE1KBC sowie dem HAMGO Protokoll von Alex OE1VQS und Kurt OE1KBC.<br><br>
@@ -48,7 +48,7 @@ Nach der Installation müssen im Tab Setup zumindest das Rufzeichen, Name, QTH, 
 ## WINDOWS
 
 <br>
-Download und install SetupHamMeseenger2-U.x.x.x.exe von Releases
+Download und install SetupHamMeseenger2-W.x.x.x.exe von Releases
 
 Es müssen keine Pakete mit pip werden.
 
@@ -56,11 +56,11 @@ Es müssen keine Pakete mit pip werden.
 
 ## Linux (Ubuntu):
 
-Download SetupHamMeseenger2-U.x.x.x.tar.gz von Releases
+Download SetupHamMeseenger2-L.x.x.x.tar.gz von Releases
 
-tar -xvzf HamMessenger2-x.x.x.tar.gz
+tar -xvzf HamMessenger2-L.x.x.x.tar.gz
 
-cd HamMessenger2
+cd HamMessenger2-L.x.x.x
 
 starten mit:
 
@@ -72,9 +72,15 @@ Es müssen keine Pakete mit pip oder apt installiert werden.
 
 ## Linux Raspberry Pi
 <br>
-Für den Raspberry Pi ist ein eigener installer erforderlich.
+Download SetupHamMeseenger2-Pi.x.x.x.tar.gz von Releases
 
-wo??????
+tar -xvzf HamMessenger2-Pi.x.x.x.tar.gz
+
+cd HamMessenger2-Pi.x.x.x
+
+starten mit:
+
+./HamMessenger2
 
 Es müssen keine Pakete mit pip oder apt installiert werden.
 
