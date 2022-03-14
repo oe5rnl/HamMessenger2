@@ -85,7 +85,8 @@ Es müssen keine Pakete mit pip oder apt installiert werden.
 <br>
 
 ## Mac
-todo<br><br>
+todo - Wer kann da know how-beisteuern?<br><br>
+Die installation erfolgt derzeit wie unter "Installation from Source" beschrieben.
 <br>
 
 # Installation vom Source Code
@@ -116,13 +117,37 @@ copy groups.ini C:\Users\reinh\AppData\Roaming\HamMessenger2<br>
 Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation geladen.<br>
 <br>
 
+## Linux (überprüfen!)
+
+git clone https://github.com/oe5rnl/hm2.git<br>
+<br>
+install python3 <br>
+pip install pyqt5<br>
+pip install pytqt5-tools<br>
+pip install dark qdarkstyle<br>
+pip install pysondb<br>
+pip install simpleaudio<br>
+
+cd HamManager2
+./HamManager2
 
 <br>
 
 ## Mac
 todo - Wer kann da know how-beisteuern?<br><br>
-Die installation erfolgt derzeit wie unter "Installation from Source" beschrieben.
 <br>
+git clone https://github.com/oe5rnl/hm2.git<br>
+<br>
+install python3 <br>
+pip install pyqt5<br>
+pip install pytqt5-tools<br>
+pip install dark qdarkstyle<br>
+pip install pysondb<br>
+pip install simpleaudio<br>
+
+change workdirecrory zu HamManager2
+starte HamManager2
+
 <br>
 
 # Erzeugen der Installer Programme
@@ -221,39 +246,7 @@ tar xvf HamMessenger2-U.x.x.x.tar.gz
 
 
 
-
 <br>
 # Info
 Sollte die Anleitung Fehler enthalten - bitte um Info in de issues am github!.
 
-
-git rm --cached file1.txt
-git commit -m "remove file1.txt"
-And to push changes to remote repo
-
-git push origin branch_name
-
-
-git reset --soft HEAD^  
-
-Raspberry :
-pip install QDarkStyle
-apt-get install pyqt5-dev
-apt-get install pyqt5-dev-tools
-apt-get install python3-pyqt5.qtmultimedia
-pip install pysondb
-
-pip install simpleaudio
-
-
-# pip install pyqt5
-# pip install dark qdarkstyle
-# pip install pysondb
-# pip install simpleaudio
-#
-# pyuic5 -x main.ui -o main-ui.py
-#
-# Raspberry PI 
-#
-# sudo apt-get install python3-pyqt5
-# sudo apt-get install libqt5multimedia5-plugins qml-module-qtmultimedia
