@@ -235,8 +235,8 @@ pyinstaller --onefile HamMessenger2.py<br>
 Bei Änderungen an den Files main.ui und goup.ui
 diese von Hammessenger2 nach dist kopieren.    
 
-cp -r dist HamMessenger2
-tar -czvf HamMessenger2-U.x.x.x.tar.gz HamMessenger2
+rm -r HamMessenger2-Pi.x.x.x && cp -r dist HamMessenger2-Pi.x.x.x
+tar -czvf prod/HamMessenger2-Pi.x.x.x.tar.gz HamMessenger2-Pi.x.x.x
     
 am Ziel PC:
 
