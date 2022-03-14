@@ -115,7 +115,7 @@ copy groups.ini C:\Users\reinh\AppData\Roaming\HamMessenger2<br>
 Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation geladen.<br>
 <br>
 
-## Linux (überprüfen!)
+## Linux 
 
 git clone https://github.com/oe5rnl/hm2.git<br>
 <br>
@@ -203,8 +203,8 @@ pyinstaller --onefile HamMessenger2.py<br>
 Bei Änderungen an den Files main.ui und goup.ui
 diese von Hammessenger2 nach dist kopieren.    
 
-cp -r dist HamMessenger2
-tar -czvf HamMessenger2-U.x.x.x.tar.gz HamMessenger2
+rm -r HamMessenger2-L.x.x.x && cp -r dist HamMessenger2-L.x.x.x
+tar -czvf prod/HamMessenger2-L.x.x.x.tar.gz HamMessenger2-L.x.x.x
     
 am Ziel PC:
 
