@@ -64,7 +64,7 @@ def handle_unhandled_exception(exc_type, exc_value, exc_traceback):
         return
     logger.critical("Unhandled exception", exc_info=(exc_type, exc_value, exc_traceback))
 
-sys.excepthook = handle_unhandled_exception
+#sys.excepthook = handle_unhandled_exception
 
 
 class Main(QObject):
