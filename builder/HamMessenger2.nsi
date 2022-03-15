@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "HamMessenger2"
-!define PRODUCT_VERSION "W-0.5.6"
+!define PRODUCT_VERSION "W-0.5.6a"
 !define PRODUCT_PUBLISHER "OE5RNL&OE5NVL"
 !define PRODUCT_WEB_SITE "http://www.oevsv.at"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\hm2.exe"
@@ -38,7 +38,7 @@
 ; MUI end ------
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
-OutFile "../prod/SetupHamMessenger2-W.0.5.6.exe"
+OutFile "../prod/SetupHamMessenger2-W.0.5.6a.exe"
 InstallDir "$PROGRAMFILES\HamMessenger2"
 InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show
