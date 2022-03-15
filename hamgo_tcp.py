@@ -118,10 +118,10 @@ class Tcp:
           for s in readable:
 
             data = s.recv(2048)
-            #data = s.recv(4096)
     
             #print('len(data)='+str(len(data)))
             #print(str(data))
+            
             if len(data)>0:
             
               sp, aa_found = self.tag_search(0xaa,data,ldata)
@@ -138,7 +138,7 @@ class Tcp:
                   pass
                 
                 com.Com.queue_msg.put(erg_buf)
-                #print('com.Com.queue_msg.put(erg_buf)'+str(erg_buf))
+                print('com.Com.queue_msg.put(erg_buf)'+str(erg_buf))
 
               elif (not aa_found) and (not ab_found):  # nothing found
                 #print('no aa and ab in data.. ', end='')
