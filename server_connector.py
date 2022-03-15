@@ -494,7 +494,7 @@ class MSG:
       self.SourceLength = int.from_bytes(msgbuf[ibp:ibp+2],byteorder='big')
       ibp = ibp + 2
 
-      self.Source = msgbuf[ibp:ibp+self.SourceLength].decode('ascii')
+      self.Source = msgbuf[ibp:ibp+self.SourceLength].decode('utf-8')
       ibp = ibp + self.SourceLength
 
       self.ContactType = int.from_bytes(msgbuf[ibp:ibp+1],byteorder='little')
@@ -503,13 +503,13 @@ class MSG:
       self.ContactLength = int.from_bytes(msgbuf[ibp:ibp+2],byteorder='big')
       ibp = ibp + 2
 
-      self.Contact = msgbuf[ibp:ibp+self.ContactLength].decode('ascii')
+      self.Contact = msgbuf[ibp:ibp+self.ContactLength].decode('utf-8')
       ibp = ibp + self.ContactLength
               
       self.PathLength = int.from_bytes(msgbuf[ibp:ibp+2],byteorder='little')
       ibp = ibp + 2
 
-      self.Path = msgbuf[ibp:ibp+self.PathLength].decode('ascii')
+      self.Path = msgbuf[ibp:ibp+self.PathLength].decode('utf-8')
       ibp = ibp + self.PathLength
 
       self.PayloadType = int.from_bytes(msgbuf[ibp:ibp+1],byteorder='little')
