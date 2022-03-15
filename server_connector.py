@@ -66,11 +66,6 @@ class Server(com.Com,QObject):
   def setConfig_data(self,config):
     self.config = config
  
-  # def playSound(self,call,snd):
-  #   if call != self.config_data.call:
-  #     a = str(os.path.dirname(os.path.abspath(sys.argv[0])))+'/'+snd
-  #     subprocess.Popen(["/usr/bin/aplay", '-D'+self.config.audio, a])
-
   def TCPconnect(self, ip='localhost', port=9124):
     r = self.tcp.TCPconnect(self.config.serverIP, int(self.config.serverPort))
     #print('server_connector:TCPconnect: '+str(r))
@@ -117,10 +112,8 @@ class RX(QObject):
     def run(self):
 
         #print('server-connector: do_rx')
-        #prctl.set_name("hgm:srv-con:do_rx")
-      
+   
         while self.running:
-          #print('----------------RX Loop')
 
           time.sleep(0.1)
           msgmax = 700
@@ -147,6 +140,7 @@ class RX(QObject):
             msg = MSG()
             msg.getMSGfromBuffer(msgbuf)
             #msg.printIPmsg('RX')  
+  
  
             # insert new GROUP
             if ((msg.PayloadType == MSG.c_PayloadGroupMessage)
@@ -500,7 +494,7 @@ class MSG:
       self.SourceLength = int.from_bytes(msgbuf[ibp:ibp+2],byteorder='big')
       ibp = ibp + 2
 
-      self.Source = msgbuf[ibp:ibp+self.SourceLength].decode('ascii')
+      self.Source = msgbuf[ibp:ibp+self.SourceLength].decode('utf-8')
       ibp = ibp + self.SourceLength
 
       self.ContactType = int.from_bytes(msgbuf[ibp:ibp+1],byteorder='little')
@@ -509,13 +503,13 @@ class MSG:
       self.ContactLength = int.from_bytes(msgbuf[ibp:ibp+2],byteorder='big')
       ibp = ibp + 2
 
-      self.Contact = msgbuf[ibp:ibp+self.ContactLength].decode('ascii')
+      self.Contact = msgbuf[ibp:ibp+self.ContactLength].decode('utf-8')
       ibp = ibp + self.ContactLength
               
       self.PathLength = int.from_bytes(msgbuf[ibp:ibp+2],byteorder='little')
       ibp = ibp + 2
 
-      self.Path = msgbuf[ibp:ibp+self.PathLength].decode('ascii')
+      self.Path = msgbuf[ibp:ibp+self.PathLength].decode('utf-8')
       ibp = ibp + self.PathLength
 
       self.PayloadType = int.from_bytes(msgbuf[ibp:ibp+1],byteorder='little')
@@ -524,7 +518,7 @@ class MSG:
       self.PayloadLength = int.from_bytes(msgbuf[ibp:ibp+4],byteorder='little')
       ibp = ibp + 4
 
-      self.Payload = msgbuf[ibp:ibp+self.PayloadLength].decode('ascii')
+      self.Payload = msgbuf[ibp:ibp+self.PayloadLength].decode("utf-8")
 
       self.PayloadTypeString = "CQ"
 
