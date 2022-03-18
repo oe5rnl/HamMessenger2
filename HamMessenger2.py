@@ -73,6 +73,8 @@ class Main(QObject):
     def __init__(self):
         super().__init__()
  
+        start = time.time()
+
         self.msg_i = 1
 
         if get_OS.isOsWindows():
@@ -170,16 +172,23 @@ class Main(QObject):
  
         self.send = server_connector.Send(self.config)
 
+        if len(self.config.call.strip())>0:
+            self.app_server_connector.reconnect()
+
         self.app_server_connector.start()
+
         self.send.HB()
         self.config.save_emit.connect(self.send.HB)
 
-        if len(self.config.call.strip())>0:
-            self.app_server_connector.reconnect()
 
         self.app.aboutToQuit.connect(self.closeEvent)
 
         self.ui.show()
+
+        ende = time.time()
+        print('{:5.3f}s'.format(ende-start))
+
+
         self.app.exec_()
 
 
@@ -318,7 +327,10 @@ class Main(QObject):
             if len(txt) > 0:
                 call = self.ui.comboBoxPrivateCalls.currentText()
                 self.send.PC(call,txt)
-                self.ui.textEditPC.clear() #.setText('')
+                self.ui.textEditPC.clear() 
+            else:
+                self.needTextDialog('Send Personal Call')    
+
 
     def on_pushButtonEC(self):
         if self.checkCallName():
@@ -328,15 +340,15 @@ class Main(QObject):
                 msgBox.setIcon(QMessageBox.Information)
                 msgBox.setText("Are you shure to send this Emergency Message\n"+txt)
                 msgBox.setWindowTitle('Send Emergency call')
-                msgBox.setStandardButtons(QMessageBox.Ok)     
+                msgBox.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)     
                 returnValue = msgBox.exec() 
                 if returnValue == QMessageBox.Ok:
                     self.send.EC(txt)
                     self.ui.textEditEC.clear() #.setText('')
                 pass
             else:
-                self.textEditEC('Send Emergency Call')
-                return False
+                self.needTextDialog('Emergency Broadcast')    
+
 
     def needTextDialog(self,title):
         msgBox = QMessageBox()

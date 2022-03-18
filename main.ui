@@ -124,7 +124,7 @@
                 </font>
                </property>
                <property name="currentIndex">
-                <number>4</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="tabBroadcast">
                 <attribute name="title">
@@ -153,7 +153,7 @@
                      <item>
                       <widget class="QPushButton" name="pushButtonBC">
                        <property name="enabled">
-                        <bool>false</bool>
+                        <bool>true</bool>
                        </property>
                        <property name="minimumSize">
                         <size>
@@ -223,7 +223,7 @@
                    <item>
                     <widget class="QPushButton" name="pushButtonCQ">
                      <property name="enabled">
-                      <bool>false</bool>
+                      <bool>true</bool>
                      </property>
                      <property name="minimumSize">
                       <size>
@@ -321,7 +321,7 @@
                    <item>
                     <widget class="QPushButton" name="pushButtonGC">
                      <property name="enabled">
-                      <bool>false</bool>
+                      <bool>true</bool>
                      </property>
                      <property name="minimumSize">
                       <size>
@@ -394,7 +394,7 @@
                      <item>
                       <widget class="QPushButton" name="pushButtonPC">
                        <property name="enabled">
-                        <bool>false</bool>
+                        <bool>true</bool>
                        </property>
                        <property name="minimumSize">
                         <size>
@@ -464,7 +464,7 @@
                    <item>
                     <widget class="QPushButton" name="pushButtonEC">
                      <property name="enabled">
-                      <bool>false</bool>
+                      <bool>true</bool>
                      </property>
                      <property name="minimumSize">
                       <size>

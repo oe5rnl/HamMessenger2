@@ -10,10 +10,10 @@
 #  license:     GNU_GENERAL_PUBLIC_LICENSE_V3
 
 from cgitb import text
-import  time, os, sys
+import  time, os #, sys
 import com
 import hamgo_tcp
-import subprocess
+#import subprocess
 from datetime import datetime
 from PyQt5.QtCore import QObject, pyqtSignal, QThread, QTimer
 
@@ -137,7 +137,7 @@ class RX(QObject):
 
             msg = MSG()
             msg.getMSGfromBuffer(msgbuf)
-            msg.printIPmsg('RX')  
+            #msg.printIPmsg('RX', mode='h')  
   
  
             # insert new GROUP
@@ -316,7 +316,7 @@ class Send(QObject):
       self.bc_i +=1
 
   def CQ(self,text): ##+ self.config.hamnetIP+'\t' \
-      msg_text =  self.config.name+'\t'+ self.config.qth+'\t' + self.config.locator+'\t'+ com.version+'\t(' + str(self.cq_i)+') '+text 
+      msg_text =  self.config.name+'\t'+ self.config.qth+'\t' + self.config.hamnetIP+'\t'+self.config.locator+'\t'+ com.version+'\t(' + str(self.cq_i)+') '+text 
       msg = MSG(payloadType=0, payload=msg_text, contactType=1, contact='CQ', source=self.config.call)   
       b = msg.buildBarray()   
       msg.printIPmsg('+++++')
