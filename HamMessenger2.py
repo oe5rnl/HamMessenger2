@@ -15,6 +15,7 @@
 # 
 # ===========================================================================
 #
+# pyuic5 -x main.ui -o main-ui.py
 #
 
 import sys
@@ -29,7 +30,7 @@ from PyQt5.QtWidgets import (QMessageBox, QSplashScreen)
 
 from PyQt5.uic import *
 
-from PyQt5.QtCore import QObject, pyqtSignal, QThread, QTimer
+from PyQt5.QtCore import QObject, pyqtSignal, QThread, QTimer, QEvent
 from PyQt5 import QtCore
 from PyQt5 import QtWidgets
 from PyQt5 import QtGui
@@ -86,7 +87,6 @@ class Main(QObject):
 
         self.singleApp = qt_singleapp.Single()
         if self.singleApp.isRunning():
-            #print('LAUFT schon')
             msgBox = QMessageBox()
             msgBox.setIcon(QMessageBox.Information)
             msgBox.setText("HamMessenger2 is still runnig")
@@ -95,7 +95,6 @@ class Main(QObject):
             returnValue = msgBox.exec()
             exit(0)
         else:
-            #print('lauft NICHT')
             self.singleApp.startServer()
  
         self.flashSplash()
@@ -106,13 +105,11 @@ class Main(QObject):
         self.ui.setWindowIcon(QtGui.QIcon(get_OS.getUserDataPath()+"res/worldwide.png"))   
         self.ui.labelVersion.setText('Ham Messenger - Version: '+com.date+' '+com.version)
         self.ui.comboBoxGuiStyle.addItems(['dark','light'])
-
         pixmap = QPixmap(get_OS.getUserDataPath()+"res/Raute_klein.jpg")
-
         self.ui.labelRaute.setPixmap(pixmap)
 
         self.config = qt_config.Config(self.ui)
-
+ 
         self.player = qt_player.Player()
         self.config.testTone_emit.connect(self.on_testTone)
 
@@ -136,16 +133,26 @@ class Main(QObject):
         self.ui.textEditPC.textChanged.connect(lambda: self.txtInputChanged(self.ui.textEditPC))
         self.ui.textEditEC.textChanged.connect(lambda: self.txtInputChanged(self.ui.textEditEC))
 
+        KeyHelper(self.ui.textEditBC).keyPressed.connect(self.onEnterTextEditBC)
+        KeyHelper(self.ui.textEditCQ).keyPressed.connect(self.onEnterTextEditCQ)
+        KeyHelper(self.ui.textEditGC).keyPressed.connect(self.onEnterTextEditGC)
+        KeyHelper(self.ui.textEditPC).keyPressed.connect(self.onEnterTextEditPC)
+        KeyHelper(self.ui.textEditEC).keyPressed.connect(self.onEnterTextEditEC)
 
         self.set_StatusLine(mode='con')
 
         self.online = qt_online.OnlineTableView(self.ui,self.config)
+        self.ui.tableViewOnline.doubleClicked.connect(self.on_rowClickOnline)
+
         self.history = qt_history.History(self.ui,self.guimode,self.config)
+        self.ui.tableWidgetHistory.doubleClicked.connect(self.on_rowClickHistory)
+
 
         self.tableWidgetLog = qt_msglog.TableWidgetLog(self.ui)
+     
 
         self.ui.comboBoxPrivateCalls.addItem('please select call')
-        self.online.model.calls_changed.connect(self.addCalls)
+        self.online.model.calls_changed.connect(self.addPrivateCalls)
 
         self.threadClock = QThread(parent=self)
         self.clock = Clock()
@@ -156,13 +163,17 @@ class Main(QObject):
 
         self.app_server_connector = server_connector.Server(self.config)
         self.config.addServer(self.app_server_connector)
+  
         self.app_server_connector.rx.online_emit.connect(self.on_online)
         self.app_server_connector.rx.msg_emit.connect(self.on_msg)
         self.app_server_connector.rx.close_emit.connect(self.on_close)
-        
+ 
         self.send = server_connector.Send(self.config)
 
         self.app_server_connector.start()
+        self.send.HB()
+        self.config.save_emit.connect(self.send.HB)
+
         if len(self.config.call.strip())>0:
             self.app_server_connector.reconnect()
 
@@ -170,6 +181,39 @@ class Main(QObject):
 
         self.ui.show()
         self.app.exec_()
+
+
+    def on_rowClickOnline(self, mi):
+        row = mi.row()
+        self.ui.tabWidgetMessages.setCurrentIndex(3)
+        self.setPrivateCall(self.online.getCall(row))
+
+    def on_rowClickHistory(self, mi):
+        row = mi.row()
+        self.ui.tabWidgetMessages.setCurrentIndex(3)
+        self.setPrivateCall(self.history.getCall(row))
+
+
+    def onEnterTextEditBC(self,key):
+        if key in (QtCore.Qt.Key_Enter, QtCore.Qt.Key_Return) and self.config.sendbyenter:
+            self.on_pushButtonBC()
+
+    def onEnterTextEditCQ(self,key):
+        if key in (QtCore.Qt.Key_Enter, QtCore.Qt.Key_Return):
+            self.on_pushButtonCQ()
+
+    def onEnterTextEditGC(self,key):
+        if key in (QtCore.Qt.Key_Enter, QtCore.Qt.Key_Return):
+            self.on_pushButtonGC()
+
+    def onEnterTextEditPC(self,key):
+        if key in (QtCore.Qt.Key_Enter, QtCore.Qt.Key_Return):
+            self.on_pushButtonPC()
+
+    def onEnterTextEditEC(self,key):
+        if key in (QtCore.Qt.Key_Enter, QtCore.Qt.Key_Return):
+            self.on_pushButtonEC()
+
 
 
     def flashSplash(self):
@@ -181,21 +225,24 @@ class Main(QObject):
         QTimer.singleShot(2000, self.splash.close)
 
     def on_testTone(self):
-        print('TestTone')
         self.player.play(get_OS.getUserDataPath()+"/res/buzzer_x.wav")
 
 
     def on_close(self,emsg):
         self.online.closeCall(emsg)
 
-    def addCalls(self,calls):
+    def addPrivateCalls(self,calls):
    
         akt_call = self.ui.comboBoxPrivateCalls.currentText()
-        #print('akt_call: '+akt_call)
         self.ui.comboBoxPrivateCalls.clear()
         self.ui.comboBoxPrivateCalls.addItem('please select call')
         self.ui.comboBoxPrivateCalls.addItems(calls)
         index = self.ui.comboBoxPrivateCalls.findText(akt_call, QtCore.Qt.MatchFixedString)
+        if index >= 0:
+            self.ui.comboBoxPrivateCalls.setCurrentIndex(index)
+
+    def setPrivateCall(self,call):
+        index = self.ui.comboBoxPrivateCalls.findText(call, QtCore.Qt.MatchFixedString)
         if index >= 0:
             self.ui.comboBoxPrivateCalls.setCurrentIndex(index)
 
@@ -231,8 +278,7 @@ class Main(QObject):
             txt = self.ui.textEditBC.toPlainText().strip()
             if len(txt) > 0:
                 self.send.BC(txt)
-                self.ui.textEditBC.setText('')
-                pass
+                self.ui.textEditBC.clear() #.setText('')
             else:
                 self.needTextDialog('Send Broadcast')    
 
@@ -242,7 +288,7 @@ class Main(QObject):
                 txt = self.ui.textEditCQ.toPlainText().strip()
             if len(txt) > 0:
                 self.send.CQ(txt)
-                self.ui.textEditCQ.setText('')              
+                self.ui.textEditCQ.clear() #.setText('')              
             else:
                 self.needTextDialog('Send CQ') 
 
@@ -254,7 +300,7 @@ class Main(QObject):
                 group = self.groupList.getGroup()
                 if self.groupList.isValidGroup(group):
                     self.send.GC(group,txt)
-                    self.ui.textEditGC.setText('')
+                    self.ui.textEditGC.clear() #.setText('')
                     pass
                 else:
                     msgBox = QMessageBox()
@@ -272,7 +318,7 @@ class Main(QObject):
             if len(txt) > 0:
                 call = self.ui.comboBoxPrivateCalls.currentText()
                 self.send.PC(call,txt)
-                self.ui.textEditPC.setText('')
+                self.ui.textEditPC.clear() #.setText('')
 
     def on_pushButtonEC(self):
         if self.checkCallName():
@@ -286,7 +332,7 @@ class Main(QObject):
                 returnValue = msgBox.exec() 
                 if returnValue == QMessageBox.Ok:
                     self.send.EC(txt)
-                    self.ui.textEditEC.setText('')
+                    self.ui.textEditEC.clear() #.setText('')
                 pass
             else:
                 self.textEditEC('Send Emergency Call')
@@ -364,6 +410,29 @@ class Main(QObject):
                 self.ui.labelStatus.setStyleSheet("background-color: red")
                 self.ui.labelStatus.setText(txt+'(OFFLINE)')
  
+
+
+
+
+class KeyHelper(QObject):
+    keyPressed = pyqtSignal(QtCore.Qt.Key)
+
+    def __init__(self, widget):
+        super().__init__(widget)
+        self._widget = widget
+        self.widget.installEventFilter(self)
+
+    @property
+    def widget(self):
+        return self._widget
+
+    def eventFilter(self, source, event):
+        if source is self.widget and event.type() == QEvent.KeyPress:
+            self.keyPressed.emit(event.key())   
+        return super().eventFilter(source, event)
+
+
+
 class Clock(QObject):
     
     tick = pyqtSignal(object)

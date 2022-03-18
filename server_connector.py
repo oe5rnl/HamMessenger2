@@ -28,7 +28,6 @@ class Server(com.Com,QObject):
     self.ip = self.config.serverIP
     self.port = self.config.serverPort
  
-    #self.chk_th_rx = com.CheckTerminated(go=True, text='server_connector:thrx')
     self.config_data = None                          
     self.tcp = hamgo_tcp.Tcp()
  
@@ -41,8 +40,7 @@ class Server(com.Com,QObject):
     
   def start(self):
     self.threadRx.start()
-    #self.threadHb.start()
-    pass
+ 
 
   def stop(self):
     self.hb.timerHb.stop()
@@ -139,7 +137,7 @@ class RX(QObject):
 
             msg = MSG()
             msg.getMSGfromBuffer(msgbuf)
-            #msg.printIPmsg('RX')  
+            msg.printIPmsg('RX')  
   
  
             # insert new GROUP
@@ -179,7 +177,7 @@ class RX(QObject):
                     self.msg_emit.emit(emsg)    
 
               elif len(payload)==5:
-                  #print('server_connector:rx: (HB)')
+                  print('server_connector:rx: (HB)')
                   emsg = {}
                   emsg['SeqCounter'] = msg.SeqCounter 
                   emsg['call'] = str(msg.Source)
@@ -298,6 +296,7 @@ class Send(QObject):
       self.config = config
 
   def HB(self):
+      print('Send:HB')
       msg_text = self.config.name+'\t'+self.config.qth+'\t'+self.config.hamnetIP+'\t'+self.config.locator+'\t'+com.version
       msg = MSG(payloadType=0, payload=msg_text, contactType=1, source=self.config.call,) 
       b = msg.buildBarray()

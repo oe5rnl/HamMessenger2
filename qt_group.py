@@ -39,7 +39,7 @@ class GroupDialog(QObject):
         reg_ex = QRegExp("[a-z-A-Z_1-9 ]+")
         self.dlg_ui.lineEditGroupDesc.setValidator(QRegExpValidator(reg_ex, self.dlg_ui.lineEditGroupDesc))
       
-        self.groupsFile = get_OS.getAPPPath()+'groups.ini'    
+        self.groupsFile = get_OS.getUserDataPath()+'groups.ini'    
         self.groups = configparser.ConfigParser()
         self.groups.optionxform = str # makes configparser case sensitive
         self.read_groups()

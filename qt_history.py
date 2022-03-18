@@ -33,17 +33,16 @@ class History(QObject):
         self.ui.tableWidgetHistory.setColumnCount(5)
         self.ui.tableWidgetHistory.horizontalHeader().setVisible(True)
         self.ui.tableWidgetHistory.setHorizontalHeaderLabels(["Typ", "Time", "Src", "Dst", "Text"])
-        #header =  self.ui.tableWidgetHistory.horizontalHeader()       
-   
-
-   
+ 
         self.ui.tableWidgetHistory.setColumnWidth(0, 50)
         self.ui.tableWidgetHistory.setColumnWidth(1, 70)
         self.ui.tableWidgetHistory.setColumnWidth(2, 80)
         self.ui.tableWidgetHistory.setColumnWidth(3, 100)
         self.ui.tableWidgetHistory.setColumnWidth(4, 500)
 
-        #header.setSectionResizeMode(5, QtWidgets.QHeaderView.Stretch)
+    def getCall(self,row):
+        return self.ui.tableWidgetHistory.item(row, 2).text()
+
 
 
     def append(self,emsg):
@@ -135,5 +134,4 @@ class History(QObject):
         self.ui.tableWidgetHistory.scrollToBottom()   
         self.ui.tableWidgetHistory.resizeRowsToContents()
 
-        # Soundausgabe fehlt
-
+ 

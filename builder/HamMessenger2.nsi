@@ -47,7 +47,6 @@ ShowUnInstDetails show
 Section "Hauptgruppe" SEC01
   SetOutPath "$INSTDIR"
   SetOverwrite ifnewer
-  File "..\dist\newgroup.ui"
   File "..\dist\main.ui"
   File "..\dist\HamMessenger2.exe"
   CreateDirectory "$SMPROGRAMS\HamMessenger2"
@@ -63,6 +62,7 @@ Section "Hauptgruppe1" SEC02
   SetOverwrite ifnewer
   CreateDirectory "$APPDATA\HamMessenger2\res"
   SetOutPath "$APPDATA\HamMessenger2\res"
+  File "..\dist\newgroup.ui"
   File "..\dist\res\buzzer_x.wav"
   File "..\dist\res\hinweis.wav"
   File "..\dist\res\Raute_klein.jpg"

@@ -57,7 +57,10 @@ class OnlineTableView(QTableView):
         if (r<=len(self.model.mdata)) and (c<=len(self.model.mdata[0])):   # WORKAROUND !!!
             return self.model.mdata[r][c]
         return ""
-        
+
+    def getCall(self,row):
+        return self.model.mdata[row][1]
+
     def erase(self):
         self.model.erase()
 
@@ -153,6 +156,17 @@ class TableModel(QtCore.QAbstractTableModel):
         self.mdata.append(newRow)
         self.calls_changed.emit(self.getCalls())
         
+    def update(self, data):
+        dt =  datetime.now()
+        for e in self.mdata:
+            if e[1] == data[1]:
+                e[2] = data[2]
+                e[3] = data[3]
+                e[4] = data[4]
+                e[5] = dt.strftime("%H:%M:%S")     
+                e[9] = dt 
+                e[6] = data[6]
+
 
     def emsg2data(self,emsg):
         return ['',emsg['call'],emsg['name'],emsg['info'],emsg['locator'],emsg['time'].strftime("%H:%M:%S") ,emsg['ip'],emsg['version'],emsg['path'],emsg['time'],'']
@@ -176,9 +190,7 @@ class TableModel(QtCore.QAbstractTableModel):
 
         # Update wenn vorhanden, sonst insert     
         elif pon: 
-            dt =  datetime.now()
-            colsOn[5] = dt.strftime("%H:%M:%S")     
-            colsOn[9] = dt 
+            self.update(data)
 
         # neu eintragen wenn noch nicht vorhanden
         elif not pon and not poff:
@@ -199,7 +211,7 @@ class TableModel(QtCore.QAbstractTableModel):
 
 
     def closeCall(self,call):      
-        print('model.closecall')  
+        #print('model.closecall')  
         p, row, cols = self.isInList(call,'online')
         cols[0]  = 'offline'
         cols[10] = 'B'
