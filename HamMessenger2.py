@@ -176,8 +176,8 @@ class Main(QObject):
             self.app_server_connector.reconnect()
 
         self.app_server_connector.start() 
-        self.config.save_emit.connect(self.send.HB)
-
+        self.config.save_emit.connect(self.a) #self.send.HB)
+        self.send.HB()
 
         self.app.aboutToQuit.connect(self.closeEvent)
 
@@ -189,6 +189,12 @@ class Main(QObject):
 
         self.app.exec_()
         # --- end main-init ---
+
+    def a(self):
+        #print('*hb1')
+        self.send.HB()
+        #print('*hb2')
+        
 
 
     def on_rowClickOnline(self, mi):
