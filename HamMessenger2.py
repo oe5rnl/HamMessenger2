@@ -55,7 +55,7 @@ import qt_singleapp
 logger = logging.getLogger(__name__)
 
 
-logging.basicConfig(filename=get_OS.getUserDataPath()+'HamMessenger2.log', filemode='a', level=logging.DEBUG)
+logging.basicConfig(filename=get_OS.getUserDataPath()+'HamMessenger2_DEBUG.log', filemode='a', level=logging.DEBUG)
 
 def handle_unhandled_exception(exc_type, exc_value, exc_traceback):
     """Handler for unhandled exceptions that will write to the logs"""
@@ -73,7 +73,7 @@ class Main(QObject):
     def __init__(self):
         super().__init__()
  
-        start = time.time()
+        #start = time.time()
 
         self.msg_i = 1
 
@@ -184,7 +184,7 @@ class Main(QObject):
         self.ui.show()
 
         ende = time.time()
-        print('{:5.3f}s'.format(ende-start))
+        #print('{:5.3f}s'.format(ende-start))
 
 
         self.app.exec_()
