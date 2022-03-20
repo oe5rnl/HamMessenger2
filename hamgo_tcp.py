@@ -138,7 +138,7 @@ class Tcp:
                   pass
                 
                 com.Com.queue_msg.put(erg_buf)
-                print('com.Com.queue_msg.put(erg_buf)'+str(erg_buf))
+                #print('com.Com.queue_msg.put(erg_buf)'+str(erg_buf))
 
               elif (not aa_found) and (not ab_found):  # nothing found
                 #print('no aa and ab in data.. ', end='')
@@ -205,22 +205,22 @@ class Tcp:
 
     #self.chk_th_tcprx.setTerminating()
 
-  def TCPsend(self,bmessage):
-    #print('\n\nTCPsend: start')
+  # def TCPsend(self,bmessage):
+  #   #print('\n\nTCPsend: start')
 
-    # reconnet 
-    if self.__connected==False:
-      self.TCPconnect(self.ip,self.port)
+  #   # reconnet 
+  #   if self.__connected==False:
+  #     self.TCPconnect(self.ip,self.port)
 
-    if self.__connected==True:
-      try:
-        self.sock.sendall(bmessage)
-      except:
-        self.__connected=False
-        self.sock.close()
-        print('TCPsend: send error')
-    else:
-      print('TCPsend: connection is closed !!!')
-    print('TCPsend: ende\n\n')
+  #   if self.__connected==True:
+  #     try:
+  #       self.sock.sendall(bmessage)
+  #     except:
+  #       self.__connected=False
+  #       self.sock.close()
+  #       print('TCPsend: send error')
+  #   else:
+  #     print('TCPsend: connection is closed !!!')
+  #   print('TCPsend: ende\n\n')
 
 

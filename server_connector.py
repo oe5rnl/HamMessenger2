@@ -10,25 +10,25 @@
 #  license:     GNU_GENERAL_PUBLIC_LICENSE_V3
 
 from cgitb import text
-import  time, os, sys
+import  time, os #, sys
 import com
 import hamgo_tcp
-import subprocess
+#import subprocess
 from datetime import datetime
 from PyQt5.QtCore import QObject, pyqtSignal, QThread, QTimer
 
 class Server(com.Com,QObject):
-
+  
   def __init__(self,config): 
     super().__init__()
     print('INIT-server-connector')
     self.config = config
+
     
     # for ip change reconnect
     self.ip = self.config.serverIP
     self.port = self.config.serverPort
  
-    #self.chk_th_rx = com.CheckTerminated(go=True, text='server_connector:thrx')
     self.config_data = None                          
     self.tcp = hamgo_tcp.Tcp()
  
@@ -41,8 +41,7 @@ class Server(com.Com,QObject):
     
   def start(self):
     self.threadRx.start()
-    #self.threadHb.start()
-    pass
+ 
 
   def stop(self):
     self.hb.timerHb.stop()
@@ -68,8 +67,10 @@ class Server(com.Com,QObject):
  
   def TCPconnect(self, ip='localhost', port=9124):
     r = self.tcp.TCPconnect(self.config.serverIP, int(self.config.serverPort))
-    #print('server_connector:TCPconnect: '+str(r))
+    print('server_connector:TCPconnect: '+str(r))
     return r
+
+
 
   def getTCPconnected(self):
     return self.tcp.getConnected()
@@ -139,7 +140,7 @@ class RX(QObject):
 
             msg = MSG()
             msg.getMSGfromBuffer(msgbuf)
-            #msg.printIPmsg('RX')  
+            #msg.printIPmsg('RX', mode='h')  
   
  
             # insert new GROUP
@@ -179,7 +180,7 @@ class RX(QObject):
                     self.msg_emit.emit(emsg)    
 
               elif len(payload)==5:
-                  #print('server_connector:rx: (HB)')
+                  print('server_connector:rx: (HB)')
                   emsg = {}
                   emsg['SeqCounter'] = msg.SeqCounter 
                   emsg['call'] = str(msg.Source)
@@ -298,6 +299,7 @@ class Send(QObject):
       self.config = config
 
   def HB(self):
+      print('Send:HB')
       msg_text = self.config.name+'\t'+self.config.qth+'\t'+self.config.hamnetIP+'\t'+self.config.locator+'\t'+com.version
       msg = MSG(payloadType=0, payload=msg_text, contactType=1, source=self.config.call,) 
       b = msg.buildBarray()
@@ -317,7 +319,7 @@ class Send(QObject):
       self.bc_i +=1
 
   def CQ(self,text): ##+ self.config.hamnetIP+'\t' \
-      msg_text =  self.config.name+'\t'+ self.config.qth+'\t' + self.config.locator+'\t'+ com.version+'\t(' + str(self.cq_i)+') '+text 
+      msg_text =  self.config.name+'\t'+ self.config.qth+'\t' + self.config.hamnetIP+'\t'+self.config.locator+'\t'+ com.version+'\t(' + str(self.cq_i)+') '+text 
       msg = MSG(payloadType=0, payload=msg_text, contactType=1, contact='CQ', source=self.config.call)   
       b = msg.buildBarray()   
       msg.printIPmsg('+++++')

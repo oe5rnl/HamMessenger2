@@ -17,6 +17,8 @@ class Config(QObject):
 
     guimode_emit = pyqtSignal(object)
     testTone_emit = pyqtSignal(object)
+    save_emit = pyqtSignal()
+
 
     def __init__(self,ui):
         super().__init__()
@@ -24,7 +26,6 @@ class Config(QObject):
         self.ui = ui
 
         self.configfile = get_OS.getUserDataPath()+'application.ini'
-        #print('self.configfile'+str(self.configfile))
         self.settings = QSettings(self.configfile, QSettings.IniFormat)
 
         self.ui.comboBoxGuiStyle.currentIndexChanged.connect(self.on_guiModeChange)
@@ -40,26 +41,20 @@ class Config(QObject):
 
     def read_config(self):
 
-        self.call       = self.settings.value('HAMGO-CLIENT/call','')
-        self.name       = self.settings.value('HAMGO-CLIENT/name','1')
-        self.qth        = self.settings.value('HAMGO-CLIENT/qth','2')
-        self.locator    = self.settings.value('HAMGO-CLIENT/locator','3')
-        self.rig1       = self.settings.value('HAMGO-CLIENT/rig1','4')
-        self.rig2       = self.settings.value('HAMGO-CLIENT/rig2','5')
-        self.rig3       = self.settings.value('HAMGO-CLIENT/rig3','6')
-        self.qrg1       = self.settings.value('HAMGO-CLIENT/qrg1','7')
-        self.qrg2       = self.settings.value('HAMGO-CLIENT/qrg2','8')
-        self.qrg3       = self.settings.value('HAMGO-CLIENT/qrg3','9')
-        self.teamtalk   = self.settings.value('HAMGO-CLIENT/teamtalk','10')
-        self.munbleIP   = self.settings.value('HAMGO-CLIENT/mumbleIP','11')
-        self.serverIP   = self.settings.value('HAMGO-CLIENT/serverIP','44.143.0.1')   # 44.143.9.72
-        self.hamnetIP   = self.settings.value('HAMGO-CLIENT/hamnetIP','44.')
-        self.serverPort = self.settings.value('HAMGO-CLIENT/port','9124')
-        self.log        = self.settings.value('HAMGO-CLIENT/log','12')
-        self.audio      = self.settings.value('HAMGO-CLIENT/audio','13')
-        self.guimode    = self.settings.value('HAMGO-CLIENT/guimode','dark')
-        self.alert      = self.settings.value('HAMGO-CLIENT/alert', True, type=bool)
- 
+        self.call        = self.settings.value('HAMGO-CLIENT/call','')
+        self.name        = self.settings.value('HAMGO-CLIENT/name','1')
+        self.qth         = self.settings.value('HAMGO-CLIENT/qth','2')
+        self.locator     = self.settings.value('HAMGO-CLIENT/locator','3')
+        self.serverIP    = self.settings.value('HAMGO-CLIENT/serverIP','44.143.0.1')   # 44.143.9.72
+        self.hamnetIP    = self.settings.value('HAMGO-CLIENT/hamnetIP','44.')
+        self.serverPort  = self.settings.value('HAMGO-CLIENT/port','9124')
+        self.log         = self.settings.value('HAMGO-CLIENT/log','12')
+        self.audio       = self.settings.value('HAMGO-CLIENT/audio','13')
+        self.guimode     = self.settings.value('HAMGO-CLIENT/guimode','dark')
+        self.alert       = self.settings.value('HAMGO-CLIENT/alert', True, type=bool)
+        self.sendbyenter = self.settings.value('HAMGO-CLIENT/sendbyenter', True, type=bool)
+
+
         self.mainWSize  = self.settings.value('GUI/mainWSize','1300,800')       
 
         if self.settings.value('gui/splitterH') is not None:
@@ -74,23 +69,17 @@ class Config(QObject):
         self.settings.setValue('HAMGO-CLIENT/name', self.name)
         self.settings.setValue('HAMGO-CLIENT/qth', self.qth)
         self.settings.setValue('HAMGO-CLIENT/locator', self.locator)
-        self.settings.setValue('HAMGO-CLIENT/rig1', self.rig1)
-        self.settings.setValue('HAMGO-CLIENT/rig2', self.rig2)
-        self.settings.setValue('HAMGO-CLIENT/rig3', self.rig3)
-        self.settings.setValue('HAMGO-CLIENT/qrg1', self.qrg1)
-        self.settings.setValue('HAMGO-CLIENT/qrg2', self.qrg2)
-        self.settings.setValue('HAMGO-CLIENT/qrg3', self.qrg3)
-        self.settings.setValue('HAMGO-CLIENT/teamtalk', self.teamtalk)
-        self.settings.setValue('HAMGO-CLIENT/mumbleIP', self.munbleIP)
         self.settings.setValue('HAMGO-CLIENT/serverIP',self.serverIP)
         self.settings.setValue('HAMGO-CLIENT/hamnetIP',self.hamnetIP)
         self.settings.setValue('HAMGO-CLIENT/guimode',self.guimode)
         self.settings.setValue('HAMGO-CLIENT/alert',self.alert)
+        self.settings.setValue('HAMGO-CLIENT/sendbyenter',self.sendbyenter)
 
         self.settings.setValue('GUI/mainWSize',self.mainWSize)
 
         self.settings.setValue('GUI/splitterH', self.ui.splitterH.saveState())  
         self.settings.setValue('GUI/splitterV', self.ui.splitterV.saveState())  
+
 
         self.settings.sync()
 
@@ -119,20 +108,18 @@ class Config(QObject):
         self.name = self.ui.lineEditName.text()      
         self.qth = self.ui.lineEditQTH.text()      
         self.locator = self.ui.lineEditLocator.text().upper()   
-        self.rig1 = self.ui.lineEditRIG1.text()      
-        self.rig2 = self.ui.lineEditRIG2.text()      
-        self.rig3 = self.ui.lineEditRIG3.text()    
-        self.qrg1 = self.ui.lineEditQRG1.text()     
-        self.qrg2 = self.ui.lineEditQRG2.text()    
-        self.qrg3 = self.ui.lineEditQRG3.text() 
         self.serverIP = self.ui.lineEditServerIP.text()
         self.hamnetIP = self.ui.lineEditHamnetIP.text()
         self.guimode = self.ui.comboBoxGuiStyle.currentText()
         self.alert = self.ui.checkBoxAlertTone.isChecked()
+        self.sendbyenter = self.ui.checkBoxSendByEnter.isChecked()
         self.write_config()
 
         #self.label_2.setStyleSheet("background-color: yellow; border: 1px solid black;")
         self.ui.labelSaveState.setStyleSheet("color: #FF0000; border: 1px solid black; font-size=22")
+        print('1')
+        self.save_emit.emit()
+        #print('2')
 
         self.ui.labelSaveState.setText('saved')
         QTimer.singleShot(1000, self.save_label)
@@ -144,21 +131,16 @@ class Config(QObject):
         self.ui.lineEditCall.setText(self.call)     
         self.ui.lineEditName.setText(self.name)      
         self.ui.lineEditQTH.setText(self.qth)      
-        self.ui.lineEditLocator.setText(self.locator)   
-        self.ui.lineEditRIG1.setText(self.rig1)      
-        self.ui.lineEditRIG2.setText(self.rig2)      
-        self.ui.lineEditRIG3.setText(self.rig3)    
-        self.ui.lineEditQRG1.setText(self.qrg1)     
-        self.ui.lineEditQRG2.setText(self.qrg2)    
-        self.ui.lineEditQRG3.setText(self.qrg3)      
-        #self.ui.lineEditTeamTalk.setText(self.teamtalk)  
-        #self.ui.lineEditMubleIP.setText(self.munbleIP)  
+        self.ui.lineEditLocator.setText(self.locator)       
+
         self.ui.lineEditServerIP.setText(self.serverIP)  #
         self.ui.lineEditHamnetIP.setText(self.hamnetIP)  
 
         self.ui.comboBoxGuiStyle.setCurrentText(self.guimode)
 
         self.ui.checkBoxAlertTone.setChecked(self.alert)
+        self.ui.checkBoxSendByEnter.setChecked(self.sendbyenter)
+        
 
         self.ui.labelAppPath.setText(get_OS.getAPPPath())
         self.ui.labelAppDataPath.setText(get_OS.getUserDataPath())
