@@ -175,9 +175,7 @@ class Main(QObject):
         if len(self.config.call.strip())>0:
             self.app_server_connector.reconnect()
 
-        self.app_server_connector.start()
-
-        self.send.HB()
+        self.app_server_connector.start() 
         self.config.save_emit.connect(self.send.HB)
 
 
@@ -190,6 +188,7 @@ class Main(QObject):
 
 
         self.app.exec_()
+        # --- end main-init ---
 
 
     def on_rowClickOnline(self, mi):

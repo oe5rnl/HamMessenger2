@@ -18,11 +18,12 @@ from datetime import datetime
 from PyQt5.QtCore import QObject, pyqtSignal, QThread, QTimer
 
 class Server(com.Com,QObject):
-
+  
   def __init__(self,config): 
     super().__init__()
     print('INIT-server-connector')
     self.config = config
+
     
     # for ip change reconnect
     self.ip = self.config.serverIP
@@ -66,8 +67,10 @@ class Server(com.Com,QObject):
  
   def TCPconnect(self, ip='localhost', port=9124):
     r = self.tcp.TCPconnect(self.config.serverIP, int(self.config.serverPort))
-    #print('server_connector:TCPconnect: '+str(r))
+    print('server_connector:TCPconnect: '+str(r))
     return r
+
+
 
   def getTCPconnected(self):
     return self.tcp.getConnected()

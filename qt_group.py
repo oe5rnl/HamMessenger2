@@ -17,6 +17,7 @@ import configparser
 from PyQt5 import QtGui, uic
 from PyQt5.QtGui import QRegExpValidator
 import get_OS
+from PyQt5 import QtCore
 
 class GroupDialog(QObject):
 
@@ -105,7 +106,7 @@ class GroupDialog(QObject):
             self.write_groups()
             self.read_groups()
   
-            txt = self.dlg_ui.lineEditGroupID.text()+' : '+self.dlg_ui.lineEditGroupDesc.text()
+            txt = self.dlg_ui.lineEditGroupID.text().upper()+' : '+self.dlg_ui.lineEditGroupDesc.text()
             index = self.ui.comboBoxGroup.findText(txt)
             self.ui.comboBoxGroup.setCurrentIndex(index)
 

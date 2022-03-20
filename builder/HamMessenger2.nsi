@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "HamMessenger2"
-!define PRODUCT_VERSION "W-0.5.6a"
+!define PRODUCT_VERSION "W-0.5.7"
 !define PRODUCT_PUBLISHER "OE5RNL&OE5NVL"
 !define PRODUCT_WEB_SITE "http://www.oevsv.at"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\hm2.exe"
@@ -38,7 +38,7 @@
 ; MUI end ------
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
-OutFile "../prod/SetupHamMessenger2-W.0.5.6a.exe"
+OutFile "../prod/SetupHamMessenger2-W.0.5.7.exe"
 InstallDir "$PROGRAMFILES\HamMessenger2"
 InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show
@@ -48,13 +48,13 @@ Section "Hauptgruppe" SEC01
   SetOutPath "$INSTDIR"
   SetOverwrite ifnewer
   File "..\dist\main.ui"
+  File "..\dist\newgroup.ui"
   File "..\dist\HamMessenger2.exe"
   CreateDirectory "$SMPROGRAMS\HamMessenger2"
   CreateShortCut "$SMPROGRAMS\HamMessenger2\HamMessenger2.lnk" "$INSTDIR\HamMessenger2.exe"
   CreateShortCut "$DESKTOP\HamMessenger2.lnk" "$INSTDIR\HamMessenger2.exe"
   CreateDirectory "$APPDATA\HamMessenger2"
   SetOutPath "$APPDATA\HamMessenger2"
-  File "..\dist\groups.ini"
 SectionEnd
 
 Section "Hauptgruppe1" SEC02
@@ -62,7 +62,6 @@ Section "Hauptgruppe1" SEC02
   SetOverwrite ifnewer
   CreateDirectory "$APPDATA\HamMessenger2\res"
   SetOutPath "$APPDATA\HamMessenger2\res"
-  File "..\dist\newgroup.ui"
   File "..\dist\res\buzzer_x.wav"
   File "..\dist\res\hinweis.wav"
   File "..\dist\res\Raute_klein.jpg"
