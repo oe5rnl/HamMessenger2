@@ -109,7 +109,8 @@ Section Uninstall
   Delete "$APPDATA\HamMessenger2\groups.ini"
   
   Delete "$APPDATA\HamMessenger2\HamMessenger2_log.json"
-  
+  Delete "$APPDATA\HamMessenger2\HamMessenger2_DEBUG_log.json"
+   
   Delete "$APPDATA\HamMessenger2\HM2.log"
   Delete "$APPDATA\HamMessenger2\res\buzzer_x.wav"
   Delete "$APPDATA\HamMessenger2\res\hinweis.wav"

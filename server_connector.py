@@ -180,7 +180,7 @@ class RX(QObject):
                     self.msg_emit.emit(emsg)    
 
               elif len(payload)==5:
-                  print('server_connector:rx: (HB)')
+                  #print('server_connector:rx: (HB)')
                   emsg = {}
                   emsg['SeqCounter'] = msg.SeqCounter 
                   emsg['call'] = str(msg.Source)

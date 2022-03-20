@@ -117,9 +117,7 @@ class Config(QObject):
 
         #self.label_2.setStyleSheet("background-color: yellow; border: 1px solid black;")
         self.ui.labelSaveState.setStyleSheet("color: #FF0000; border: 1px solid black; font-size=22")
-        print('1')
         self.save_emit.emit()
-        #print('2')
 
         self.ui.labelSaveState.setText('saved')
         QTimer.singleShot(1000, self.save_label)

@@ -57,7 +57,7 @@ class Tcp:
 
     self.ip = ip
     self.port = port
-    print('TCP try to connect: '+str(self.ip)+':'+str(self.port))
+    #print('TCP try to connect: '+str(self.ip)+':'+str(self.port))
 
     if self.getConnected():
       print('TCP still connected')
