@@ -174,10 +174,11 @@ class Main(QObject):
 
         if len(self.config.call.strip())>0:
             self.app_server_connector.reconnect()
+            self.send.HB()
 
         self.app_server_connector.start() 
         self.config.save_emit.connect(self.a) #self.send.HB)
-        self.send.HB()
+
 
         self.app.aboutToQuit.connect(self.closeEvent)
 
