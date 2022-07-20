@@ -104,7 +104,6 @@ kann die Installation vom Sourcecode probiert werden.
 
 git clone https://github.com/oe5rnl/hm2.git<br>
 <br>
-*<br>
 pip install python3<br>
 pip install pyqt5<br>
 pip install qdarkstyle<br>
