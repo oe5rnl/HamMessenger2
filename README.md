@@ -126,7 +126,9 @@ Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation ge
 
 git clone https://github.com/oe5rnl/hm2.git<br>
 <br>
-install python3 <br>
+sudo apt install gcc<br>
+sudo apt-get install -y python3-dev libasound2-dev<br>
+pip install python3 <br>
 pip install pyqt5<br>
 pip install pytqt5-tools<br>
 pip install dark qdarkstyle<br>
@@ -143,7 +145,9 @@ todo - Wer kann da know how-beisteuern?<br><br>
 <br>
 git clone https://github.com/oe5rnl/hm2.git<br>
 <br>
-install python3 <br>
+sudo apt install gcc<br>
+sudo apt-get install -y python3-dev libasound2-dev<br>
+pip install python3 <br>
 pip install pyqt5<br>
 pip install pytqt5-tools<br>
 pip install dark qdarkstyle<br>
@@ -160,7 +164,7 @@ starte HamManager2
 ## Windows
 
 prerequisite:
-* git installieren
+* git installieren<br>
 * install python3 <br>
 * pip install pyqt5<br>
 * pip install dark qdarkstyle<br>
@@ -197,6 +201,8 @@ Erzeugen des Setupprogrammes mit NSIS Menu<br>
 
 git clone https://github.com/oe5rnl/HamMessenger2.git
 
+sudo apt install gcc<br>
+sudo apt-get install -y python3-dev libasound2-dev<br>
 install python3 <br>
 pip install pyqt5<br>
 pip install pytqt5-tools<br>
@@ -225,6 +231,8 @@ tar xvf HamMessenger2-U.x.x.x.tar.gz
 
 git clone https://github.com/oe5rnl/HamMessenger2.git<br>
 <br>
+sudo apt install gcc<br>
+sudo apt-get install -y python3-dev libasound2-dev<br>
 pip install python3 # sollte schon installiert sein<br>
 pip install dark qdarkstyle<br>
 pip install pysondb<br>

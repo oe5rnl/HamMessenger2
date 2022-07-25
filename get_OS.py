@@ -25,8 +25,11 @@ def isOsWindows():
 
 
 def getUserDataPath():
+    print("OS================"+str(getOs()))
     if getOs() == 'Windows':
+        print("WWWW")
         p = os.getenv('APPDATA')+'\\HamMessenger2\\'
+        print("p========="+str(p))
         return p
     elif getOs() == 'Linux':
         return os.path.abspath(os.getcwd()).replace('\\','/')+'/'   
