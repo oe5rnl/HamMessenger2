@@ -126,17 +126,26 @@ Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation ge
 
 git clone https://github.com/oe5rnl/hm2.git<br>
 <br>
-sudo apt install gcc<br>
+
+python3 should be installed
+
+sudo apt-get install git build-essential<br>
 sudo apt-get install -y python3-dev libasound2-dev<br>
-pip install python3 <br>
+<br>
+sudo apt-get install python3-pyqt5
+sudo apt-get install qtcreator pyqt5-dev-tools
+sudo apt-get install qttools5-dev-tools
+<br>
 pip install pyqt5<br>
-pip install pytqt5-tools<br>
-pip install dark qdarkstyle<br>
+pip install qdarkstyle<br>
 pip install pysondb<br>
 pip install simpleaudio<br>
 
+
 cd HamManager2
 ./HamManager2
+
+Änderungen der GUI mit qtcreator
 
 <br>
 

@@ -19,6 +19,46 @@
          "Path": "",
          "date": "20220314",
          "id": 266537589534507396
+      },
+      {
+         "PayloadTypeString": "ER",
+         "time": "2022-07-26 18:24:46",
+         "Source": "--",
+         "Contact": "--",
+         "payload": "Connection to the HAMGO module not possible.\nHAMGO Module offline or check Setup please",
+         "Path": "",
+         "date": "20220726",
+         "id": 438061578650229002
+      },
+      {
+         "PayloadTypeString": "ER",
+         "time": "2022-07-26 18:25:46",
+         "Source": "--",
+         "Contact": "--",
+         "payload": "Connection to the HAMGO module not possible.\nHAMGO Module offline or check Setup please",
+         "Path": "",
+         "date": "20220726",
+         "id": 114409421867569944
+      },
+      {
+         "PayloadTypeString": "OK",
+         "time": "2022-07-26 18:26:31",
+         "Source": "--",
+         "Contact": "--",
+         "payload": "Reconnect to the HAMGO Module done",
+         "Path": "",
+         "date": "20220726",
+         "id": 101419922260188601
+      },
+      {
+         "PayloadTypeString": "ER",
+         "time": "2022-07-26 18:50:31",
+         "Source": "--",
+         "Contact": "--",
+         "payload": "Connection to the HAMGO module not possible.\nHAMGO Module offline or check Setup please",
+         "Path": "",
+         "date": "20220726",
+         "id": 405121556126002575
       }
    ]
 }
