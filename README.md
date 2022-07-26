@@ -28,7 +28,7 @@ Getestet wurde das Programm auf folgende Betriebssystemen:<br>
 
 Anregungen und Fehler bitte im github als Issue einmelden.
 
-
+Für Ubuntu 22.04 LTS kann das Programm vom Sourcecode installiert werden.
 
 Weitere Infos:
 
@@ -132,9 +132,8 @@ python3 should be installed
 sudo apt-get install git build-essential<br>
 sudo apt-get install -y python3-dev libasound2-dev<br>
 <br>
-sudo apt-get install python3-pyqt5
-sudo apt-get install qtcreator pyqt5-dev-tools
-sudo apt-get install qttools5-dev-tools
+sudo apt-get install python3-pyqt5<br>
+sudo apt-get install qtcreator pyqt5-dev-tools<br>
 <br>
 pip install pyqt5<br>
 pip install qdarkstyle<br>
@@ -142,7 +141,7 @@ pip install pysondb<br>
 pip install simpleaudio<br>
 
 
-cd HamManager2
+cd HamManager2<br>
 ./HamManager2
 
 Änderungen der GUI mit qtcreator
