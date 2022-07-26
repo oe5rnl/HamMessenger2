@@ -25,9 +25,9 @@ def isOsWindows():
 
 
 def getUserDataPath():
-    print("OS================"+str(getOs()))
+    #print("OS================"+str(getOs()))
     if getOs() == 'Windows':
-        print("WWWW")
+        #print("WWWW")
         p = os.getenv('APPDATA')+'\\HamMessenger2\\'
         print("p========="+str(p))
         return p
