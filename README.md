@@ -42,7 +42,7 @@ MESHCOM: https://wiki.oevsv.at/wiki/Kategorie:MeshCom
 
 <br>
 <b>Alle Installationsprogramme findest du im github unter Releases.</b><br>
-Nach der Installation müssen im Tab Setup zumindest das Rufzeichen, Name, QTH, Broadcast IP und Hamnet IP eingegeben werden.
+Nach der Installation müssen beim ersten Start im Tab Setup zumindest das Rufzeichen, Name, QTH, Broadcast IP und Hamnet IP eingegeben werden.
 <br><br>
 
 ## WINDOWS
@@ -93,6 +93,7 @@ todo - Wer kann da know how-beisteuern?<br><br>
 Die installation erfolgt derzeit wie unter "Installation from Source" beschrieben.
 <br>
 
+
 # Installation vom Source Code
 
 <br>
@@ -124,12 +125,10 @@ Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation ge
 
 ## Linux 
 
-git clone https://github.com/oe5rnl/hm2.git<br>
+git clone https://github.com/oe5rnl/HamMessenger2.git
 <br>
-
-python3 und git sollte schon installiert sein.
-
-sudo apt-get install git build-essential<br>
+sudo apt-get install python3 python3-pip git
+sudo apt-get install build-essential<br>
 sudo apt-get install -y python3-dev libasound2-dev<br>
 <br>
 sudo apt-get install python3-pyqt5<br>
@@ -145,25 +144,31 @@ pip3 install simpleaudio<br>
 cd HamManager2<br>
 python3 ./HamManager2.py
 
-
 <br>
 
 ## Mac
-todo - Wer kann da know how-beisteuern?<br><br>
+todo - Wer kann da know how-beisteuern?<br>
 <br>
 git clone https://github.com/oe5rnl/hm2.git<br>
-<br>
-sudo apt install gcc<br>
-sudo apt-get install -y python3-dev libasound2-dev<br>
-pip install python3 <br>
-pip install pyqt5<br>
-pip install pytqt5-tools<br>
-pip install dark qdarkstyle<br>
-pip install pysondb<br>
-pip install simpleaudio<br>
 
-change workdirecrory zu HamManager2
-starte HamManager2
+
+sudo apt-get install python3 python3-pip git
+sudo apt-get install build-essential<br>
+sudo apt-get install -y python3-dev libasound2-dev<br>
+<br>
+sudo apt-get install python3-pyqt5<br>
+sudo apt-get install qtcreator pyqt5-dev-tools<br>
+<br>
+sudo apt install python3-pip<br>
+pip3 install pyqt5<br>
+pip3 install qdarkstyle<br>
+pip3 install pysondb<br>
+pip3 install simpleaudio<br>
+
+
+cd HamManager2<br>
+python3 ./HamManager2.py
+
 
 <br>
 
@@ -208,39 +213,44 @@ Erzeugen des Setupprogrammes mit NSIS Menu<br>
 ## Linux (Ubuntu)
 
 git clone https://github.com/oe5rnl/HamMessenger2.git
-
-sudo apt install gcc<br>
+<br>
+sudo apt-get install python3 python3-pip git
+sudo apt-get install build-essential<br>
 sudo apt-get install -y python3-dev libasound2-dev<br>
-install python3 <br>
+<br>
+sudo apt-get install python3-pyqt5<br>
+sudo apt-get install qtcreator pyqt5-dev-tools<br>
+<br>
+sudo apt install python3-pip<br>
 pip3 install pyqt5<br>
-pip3 install pytqt5-tools<br>
-pip3 install dark qdarkstyle<br>
+pip3 install qdarkstyle<br>
 pip3 install pysondb<br>
 pip3 install simpleaudio<br>
+
+
+cd HamManager2<br>
+python3 ./HamManager2.py
+
+
 
 Erzeugen eines Packages mit pyinstaller<br>
 
 pip3 install pyinstaller<br>
 ev. pyinstaller in den PATH einfügen<bR>
 
-cd HamMessenger2<br>
-pyinstaller HamMessenger2.py<br>
+./make_runtime erzeugt ein tar File in der Form HamMessenger2-U.x.x.x.tar.gz<br>
 
-Bei Änderungen an den Files main.ui und group.ui oder application.ini<br>
-diese von Hammessenger2 nach dist kopieren:<br>    
-
-cp main.ui group.ui application.ini dist<br>
-
-Ziel Archiv erzeugen:<br>
-x.x.x gegen eine Versionsummer ersetzten<br>
+x.x.x ist die Versionsnummer und muss dem Script make_runtime als <br>
+Parameter übergeben werden:<br>
 <br>
-rm -r HamMessenger2-L.x.x.x<br>
-cp -r dist HamMessenger2-L.x.x.x
-tar -czvf prod/HamMessenger2-L.x.x.x.tar.gz dist
-    
-am Ziel PC:
+zb.: ./make_runtime 0 0 5<br>
+<br>
+Am Ziel PC:<br>
 
 tar xvf HamMessenger2-U.x.x.x.tar.gz
+
+cd HamMessenger2<br>
+./HamMessenger2
 
 
 # raspberry PI

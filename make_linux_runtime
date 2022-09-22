@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+if [ $# -eq 3 ]
+then
+ rm -r build/*
+ rm -r dist/*
+ pyinstaller --onefile HamMessenger2.py
+ cp -r res main.ui newgroup.ui dist
+ cp application-default.ini dist/application.ini
+ cp groups-default.ini dist/groups.ini
+ rm -r prod/HamMessenger2
+ mkdir prod/HamMessenger2
+ cp -r dist/* prod/HamMessenger2
+ cd prod
+ tar -czvf ./HamMessenger2-L.$1.$2.$3.tar.gz HamMessenger2
+else
+ echo "please set version like: 1 2 3"
+fi
+
