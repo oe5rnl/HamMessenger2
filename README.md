@@ -22,13 +22,13 @@ Getestet wurde das neue Programm auf folgenden Betriebssystemen:<br>
 
 * Ubuntu        20.04 LTS   
 * Ubuntu        22.04 LTS   
-* Mint          ?
-* raspberry Pi  Raspian GNU/Linux 11 (bullseye)
-* Mac           -Test noch offen
+* Mint           5.15.0-47-generic
+* raspberry Pi  Raspian GNU/Linux 11 (bullseye) 32 Bit, 64 Bit nicht getestet
+* Mac           Test noch offen
 * Windows       10 
 * Windows       11
 
-Anregungen und Fehler bitte im github als Issue einmelden.
+Anregungen und Fehler bitte im github als Issue melden.
 
 Weitere Infos:
 
@@ -54,7 +54,7 @@ Es müssen keine Pakete mit pip werden.
 
 <br>
 
-## Linux (Ubuntu):
+## Linux (Ubuntu, Mint, Raspberry):
 
 Download HamMeseenger2-L.x.x.x.tar.gz von Releases
 
@@ -70,23 +70,6 @@ Es müssen keine Pakete mit pip oder apt installiert werden.
 
 <br>
 
-## Linux Raspberry Pi
-<br>
-Download SetupHamMeseenger2-Pi.x.x.x.tar.gz von Releases
-
-tar -xvzf HamMessenger2-Pi.x.x.x.tar.gz
-
-cd HamMessenger2-Pi.x.x.x
-
-starten mit:
-
-./HamMessenger2
-
-Es müssen keine Pakete mit pip oder apt installiert werden.
-
-
-<br>
-<br>
 
 ## Mac
 todo - Wer kann da know how-beisteuern?<br><br>
@@ -123,7 +106,7 @@ copy groups.ini C:\Users\reinh\AppData\Roaming\HamMessenger2<br>
 Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation geladen.<br>
 <br>
 
-## Linux 
+## Linux (Ubuntu, Mint, Raspberry pi)
 
 git clone https://github.com/oe5rnl/HamMessenger2.git<br>
 <br>
@@ -159,7 +142,7 @@ todo - Wer kann da know-how beisteuern?<br>
 
 ## Windows
 
-Installation wie oben unter Windows beschriben.<br>
+Installation wie oben unter Windows beschrieben.<br>
 <br>
 Das Erzeugen des Installers erfolgt in drei Schritten:<br>
 
@@ -182,7 +165,7 @@ Erzeugen des Setupprogrammes mit NSIS Menu<br>
 
 
 
-## Linux (Ubuntu)
+## Linux (Ubuntu, Mint, Ubuntu)
 
 Installation wie oben unter Linux beschrieben, dann<br>
 
@@ -205,43 +188,10 @@ cd HamMessenger2<br>
 ./HamMessenger2
 
 
-# raspberry PI  ???
-
-git clone https://github.com/oe5rnl/HamMessenger2.git<br>
-<br>
-sudo apt install gcc<br>
-sudo apt-get install -y python3-dev libasound2-dev<br>
-pip install python3 # sollte schon installiert sein<br>
-pip install dark qdarkstyle<br>
-pip install pysondb<br>
-pip install simpleaudio<br>
-pip install pyinstaller<br>
 <br>
 
-sudo apt-get install python3-pyqt5<br>
-sudo apt-get install pyqt5-dev-tools<br>
-#install pyqt5-tools ???
-#sudo apt-get install libqt5multimedia5-plugins qml-module-qtmultimedia<br>
-
-Erzeugen eines Packages mit pyinstaller<br>
-
-cd HamMessenger2<br>
-mkdir prod<br>
-pyinstaller --onefile HamMessenger2.py<br>
-
-Bei Änderungen an den Files main.ui und goup.ui
-diese von Hammessenger2 nach dist kopieren.    
-
-rm -r HamMessenger2-Pi.x.x.x && cp -r dist HamMessenger2-Pi.x.x.x
-tar -czvf prod/HamMessenger2-Pi.x.x.x.tar.gz HamMessenger2-Pi.x.x.x
-    
-am Ziel PC:
-
-tar xvf HamMessenger2-U.x.x.x.tar.gz
+## Info
 
 
-
-<br>
-# Info
 Sollte die Anleitung Fehler enthalten - bitte um Info in de issues am github!.
 
