@@ -17,7 +17,7 @@ Für Windows gibt es natürlich immer noch den .NET Client von OE1KBC.<br>
 Er kann über den Link http://news.ampr.at/?page_id=462 aus dem HAMNET geladen werden.<br>
 
 <br>
-Getestet wurde das neue Programm auf folgende Betriebssystemen:<br>
+Getestet wurde das neue Programm auf folgenden Betriebssystemen:<br>
 <br>
 
 * Ubuntu        20.04 LTS   
@@ -41,7 +41,7 @@ MESHCOM: https://wiki.oevsv.at/wiki/Kategorie:MeshCom
 # HamMessenger Install 
 
 <br>
-<b>Alle Installationsprogramme findest du im github unter Releases.</b><br>
+<b>Alle gebrauchfertige Installationsprogramme findest du im github unter Releases.</b><br>
 Nach der Installation müssen beim ersten Start im Tab Setup zumindest das Rufzeichen, Name, QTH, Broadcast IP und Hamnet IP eingegeben werden.
 <br><br>
 
@@ -56,7 +56,7 @@ Es müssen keine Pakete mit pip werden.
 
 ## Linux (Ubuntu):
 
-Download SetupHamMeseenger2-L.x.x.x.tar.gz von Releases
+Download HamMeseenger2-L.x.x.x.tar.gz von Releases
 
 tar -xvzf HamMessenger2-L.x.x.x.tar.gz
 

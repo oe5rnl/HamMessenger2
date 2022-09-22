@@ -9,6 +9,7 @@ then
  cp -r res main.ui newgroup.ui dist
  cp application-default.ini dist/application.ini
  cp groups-default.ini dist/groups.ini
+ mkdir prod
  rm -r prod/HamMessenger2
  mkdir prod/HamMessenger2
  cp -r dist/* prod/HamMessenger2
