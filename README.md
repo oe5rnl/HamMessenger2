@@ -9,26 +9,26 @@ Der HAMGO Messenger Client lauft unter Windows, Linux und MAC.<br><br>
 <b>Diese Version ersetzt die alte PyGObject/Gtk3 Linux Version aus dem Jahr 2018!!!</b><br>
 
 Der MultiPlatform-Client wurde von Reinhold OE5RNL und Manfed OE5NVL erstellt. <br>
-Er basiert auf dem Windows .NET Client von OE1KBC sowie dem HAMGO Protokoll von Alex OE1VQS und Kurt OE1KBC.<br><br>
-Das Programm ist in Python geschrieben. Als GUI Framework wurde PyQt5 verwendet.<br>
+Das Programm ist in Python geschrieben. Als GUI Framework wurde PyQt5 verwendet.<br><br>
+Er basiert auf dem Windows .NET Client von OE1KBC sowie dem HAMGO Protokoll von Alex OE1VQS und Kurt OE1KBC.<br>
 <br>
 
-Für Windiows gibt  es natürlich immer noch den .NET Client von OE1KBC.<br>
+Für Windows gibt es natürlich immer noch den .NET Client von OE1KBC.<br>
 Er kann über den Link http://news.ampr.at/?page_id=462 aus dem HAMNET geladen werden.<br>
 
 <br>
-Getestet wurde das Programm auf folgende Betriebssystemen:<br>
+Getestet wurde das neue Programm auf folgende Betriebssystemen:<br>
 <br>
 
 * Ubuntu        20.04 LTS   
+* Ubuntu        22.04 LTS   
+* Mint          ?
 * raspberry Pi  Raspian GNU/Linux 11 (bullseye)
 * Mac           -Test noch offen
 * Windows       10 
 * Windows       11
 
 Anregungen und Fehler bitte im github als Issue einmelden.
-
-Für Ubuntu 22.04 LTS kann das Programm vom Sourcecode installiert werden.
 
 Weitere Infos:
 
@@ -101,7 +101,7 @@ kann die Installation vom Sourcecode probiert werden.
 <br><br>
 
 ## Windows 
-
+apt-get install git
 git clone https://github.com/oe5rnl/hm2.git<br>
 <br>
 *<br>
@@ -127,7 +127,7 @@ Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation ge
 git clone https://github.com/oe5rnl/hm2.git<br>
 <br>
 
-python3 should be installed
+python3 und git sollte schon installiert sein.
 
 sudo apt-get install git build-essential<br>
 sudo apt-get install -y python3-dev libasound2-dev<br>
@@ -135,16 +135,16 @@ sudo apt-get install -y python3-dev libasound2-dev<br>
 sudo apt-get install python3-pyqt5<br>
 sudo apt-get install qtcreator pyqt5-dev-tools<br>
 <br>
-pip install pyqt5<br>
-pip install qdarkstyle<br>
-pip install pysondb<br>
-pip install simpleaudio<br>
+sudo apt install python3-pip<br>
+pip3 install pyqt5<br>
+pip3 install qdarkstyle<br>
+pip3 install pysondb<br>
+pip3 install simpleaudio<br>
 
 
 cd HamManager2<br>
-./HamManager2
+python3 ./HamManager2.py
 
-Änderungen der GUI mit qtcreator
 
 <br>
 
@@ -212,23 +212,31 @@ git clone https://github.com/oe5rnl/HamMessenger2.git
 sudo apt install gcc<br>
 sudo apt-get install -y python3-dev libasound2-dev<br>
 install python3 <br>
-pip install pyqt5<br>
-pip install pytqt5-tools<br>
-pip install dark qdarkstyle<br>
-pip install pysondb<br>
-pip install simpleaudio<br>
+pip3 install pyqt5<br>
+pip3 install pytqt5-tools<br>
+pip3 install dark qdarkstyle<br>
+pip3 install pysondb<br>
+pip3 install simpleaudio<br>
 
 Erzeugen eines Packages mit pyinstaller<br>
 
+pip3 install pyinstaller<br>
+ev. pyinstaller in den PATH einfügen<bR>
+
 cd HamMessenger2<br>
-mkdir prod<br>
-pyinstaller --onefile HamMessenger2.py<br>
+pyinstaller HamMessenger2.py<br>
 
-Bei Änderungen an den Files main.ui und goup.ui
-diese von Hammessenger2 nach dist kopieren.    
+Bei Änderungen an den Files main.ui und group.ui oder application.ini<br>
+diese von Hammessenger2 nach dist kopieren:<br>    
 
-rm -r HamMessenger2-L.x.x.x && cp -r dist HamMessenger2-L.x.x.x
-tar -czvf prod/HamMessenger2-L.x.x.x.tar.gz HamMessenger2-L.x.x.x
+cp main.ui group.ui application.ini dist<br>
+
+Ziel Archiv erzeugen:<br>
+x.x.x gegen eine Versionsummer ersetzten<br>
+<br>
+rm -r HamMessenger2-L.x.x.x<br>
+cp -r dist HamMessenger2-L.x.x.x
+tar -czvf prod/HamMessenger2-L.x.x.x.tar.gz dist
     
 am Ziel PC:
 
