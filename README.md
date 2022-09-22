@@ -28,7 +28,7 @@ Getestet wurde das neue Programm auf folgenden Betriebssystemen:<br>
 * Windows       10 
 * Windows       11
 
-Anregungen und Fehler bitte im github als Issue melden.
+Anregungen und gefundene Fehler bitte im github als Issue melden.
 
 Weitere Infos:
 
@@ -41,7 +41,7 @@ MESHCOM: https://wiki.oevsv.at/wiki/Kategorie:MeshCom
 # HamMessenger installieren 
 
 <br>
-<b>Alle gebrauchfertige Installationsprogramme findest du im github unter Releases.</b><br>
+<b>Alle gebrauchsfertige Installationsprogramme findest du im github unter Releases.</b><br>
 Nach der Installation müssen beim ersten Start im Tab Setup zumindest das Rufzeichen, Name, QTH, Broadcast IP und Hamnet IP eingegeben werden.
 <br><br>
 
@@ -86,10 +86,9 @@ kann die Installation vom Sourcecode probiert werden.
 
 ## Windows 
 apt-get install git
-git clone https://github.com/oe5rnl/hm2.git<br>
+git clone https://github.com/oe5rnl/HamMessenger2.git<br>
 <br>
-*<br>
-pip install python3<br>
+pip install python<br>
 pip install pyqt5<br>
 pip install qdarkstyle<br>
 pip install pysondb<br>
@@ -99,6 +98,7 @@ Die folgenden Dateien werden normalerweise vom Installer angelegt.<br>
 In Fall der manuellen Installation müssen aus sie aus dem Verzeichnis HamMessenger2 <br>
 in das Verzeihnis APPDATE\Roaming\HamMessenger2 des Users kopiert werden:<br>
 <br>
+mkdir C:\Users\reinh\AppData\Roaming\HamMessenger2<br>
 mkdir C:\Users\reinh\AppData\Roaming\HamMessenger2\res<br>
 copy res* C:\Users\reinh\AppData\Roaming\HamMessenger2\res<br>
 copy groups.ini C:\Users\reinh\AppData\Roaming\HamMessenger2<br>
@@ -154,6 +154,7 @@ Kopieren von Dateien in das Verzeichnis dist<br><br>
     mkdir prod<br>
 <br>
 Erzeugen eines Packages mit pyinstaller<br>
+    pip install pyinstaller<br><br>
     pyinstaller --onefile HamMessenger2.py<br>
 <br>
 Erzeugen des Setupprogrammes mit NSIS Menu<br>
@@ -161,7 +162,7 @@ Erzeugen des Setupprogrammes mit NSIS Menu<br>
     Edit Version Info<br>
     Compile NSI scripts: HamMessenger2.nsi<br>
     Ergebnis steht im Verzeichnis builder
-    Mit HM NIS Edit kann die nsi date bearbeitet werden.<br>
+    Mit dem Programm "HM NIS Edit" kann die nsi date bearbeitet werden.<br>
 
 
 
