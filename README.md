@@ -214,12 +214,12 @@ Erzeugen des Setupprogrammes mit NSIS Menu<br>
 
 git clone https://github.com/oe5rnl/HamMessenger2.git
 <br>
-sudo apt-get install python3 python3-pip git
-sudo apt-get install build-essential<br>
-sudo apt-get install -y python3-dev libasound2-dev<br>
+sudo apt-get -y install python3 python3-pip git
+sudo apt-get -y install build-essential<br>
+sudo apt-get -y install python3-dev libasound2-dev<br>
 <br>
-sudo apt-get install python3-pyqt5<br>
-sudo apt-get install qtcreator pyqt5-dev-tools<br>
+sudo apt-get -y install python3-pyqt5<br>
+sudo apt-get -y install qtcreator pyqt5-dev-tools<br>
 <br>
 sudo apt install python3-pip<br>
 pip3 install pyqt5<br>
