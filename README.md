@@ -38,7 +38,7 @@ MESHCOM: https://wiki.oevsv.at/wiki/Kategorie:MeshCom
 
 <br>
 
-# HamMessenger Install 
+# HamMessenger installieren 
 
 <br>
 <b>Alle gebrauchfertige Installationsprogramme findest du im github unter Releases.</b><br>
@@ -97,7 +97,7 @@ Die installation erfolgt derzeit wie unter "Installation from Source" beschriebe
 # Installation vom Source Code
 
 <br>
-Sollte der Installer für das entsprechnde Betriebssytem nicht funktionieren, <br>
+Sollte der Installer für das entsprechende Betriebssytem nicht funktionieren, <br>
 kann die Installation vom Sourcecode probiert werden.
 <br><br>
 
@@ -125,16 +125,15 @@ Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation ge
 
 ## Linux 
 
-git clone https://github.com/oe5rnl/HamMessenger2.git
+git clone https://github.com/oe5rnl/HamMessenger2.git<br>
 <br>
-sudo apt-get install python3 python3-pip git
-sudo apt-get install build-essential<br>
-sudo apt-get install -y python3-dev libasound2-dev<br>
+sudo apt-get -y install build-essential<br>
+sudo apt-get -y install python3 python3-pip git<br>
+sudo apt-get -y install python3-dev libasound2-dev<br>
 <br>
-sudo apt-get install python3-pyqt5<br>
-sudo apt-get install qtcreator pyqt5-dev-tools<br>
+sudo apt-get -y install python3-pyqt5<br>
+sudo apt-get -y install qtcreator pyqt5-dev-tools<br>
 <br>
-sudo apt install python3-pip<br>
 pip3 install pyqt5<br>
 pip3 install qdarkstyle<br>
 pip3 install pysondb<br>
@@ -147,47 +146,20 @@ python3 ./HamManager2.py
 <br>
 
 ## Mac
-todo - Wer kann da know how-beisteuern?<br>
+
+Sollte identisch zu Linux sein.
+
+todo - Wer kann da know-how beisteuern?<br>
 <br>
-git clone https://github.com/oe5rnl/hm2.git<br>
-
-
-sudo apt-get install python3 python3-pip git
-sudo apt-get install build-essential<br>
-sudo apt-get install -y python3-dev libasound2-dev<br>
-<br>
-sudo apt-get install python3-pyqt5<br>
-sudo apt-get install qtcreator pyqt5-dev-tools<br>
-<br>
-sudo apt install python3-pip<br>
-pip3 install pyqt5<br>
-pip3 install qdarkstyle<br>
-pip3 install pysondb<br>
-pip3 install simpleaudio<br>
-
-
-cd HamManager2<br>
-python3 ./HamManager2.py
-
 
 <br>
+
 
 # Erzeugen der Installer Programme
 
 ## Windows
 
-prerequisite:
-* git installieren<br>
-* install python3 <br>
-* pip install pyqt5<br>
-* pip install dark qdarkstyle<br>
-* pip install pysondb<br>
-* pip install simpleaudio<br>
-<br>
-* pip install pyinstaller
-* Download und install NSIS-Menu from https://nsis.sourceforge.io/Download
-* den NSIS Editor/assistent from http://hmne.sourceforge.net/
-
+Installation wie oben unter Windows beschriben.<br>
 <br>
 Das Erzeugen des Installers erfolgt in drei Schritten:<br>
 
@@ -212,38 +184,18 @@ Erzeugen des Setupprogrammes mit NSIS Menu<br>
 
 ## Linux (Ubuntu)
 
-git clone https://github.com/oe5rnl/HamMessenger2.git
-<br>
-sudo apt-get -y install python3 python3-pip git
-sudo apt-get -y install build-essential<br>
-sudo apt-get -y install python3-dev libasound2-dev<br>
-<br>
-sudo apt-get -y install python3-pyqt5<br>
-sudo apt-get -y install qtcreator pyqt5-dev-tools<br>
-<br>
-sudo apt install python3-pip<br>
-pip3 install pyqt5<br>
-pip3 install qdarkstyle<br>
-pip3 install pysondb<br>
-pip3 install simpleaudio<br>
-
-
-cd HamManager2<br>
-python3 ./HamManager2.py
-
-
-
-Erzeugen eines Packages mit pyinstaller<br>
+Installation wie oben unter Linux beschrieben, dann<br>
 
 pip3 install pyinstaller<br>
-ev. pyinstaller in den PATH einfügen<bR>
+ev. pyinstaller in den PATH einfügen.<bR>
 
-./make_runtime erzeugt ein tar File in der Form HamMessenger2-U.x.x.x.tar.gz<br>
+./make_runtime x.x.x erzeugt ein tar.gz File in der Form HamMessenger2-L.x.x.x.tar.gz<br>
 
-x.x.x ist die Versionsnummer und muss dem Script make_runtime als <br>
-Parameter übergeben werden:<br>
 <br>
-zb.: ./make_runtime 0 0 5<br>
+zb.: ./make_runtime 0.1.57c<br>
+
+Das Ergebnis tar.gz liegt im prod Verzeischnis.<br>
+
 <br>
 Am Ziel PC:<br>
 
@@ -253,7 +205,7 @@ cd HamMessenger2<br>
 ./HamMessenger2
 
 
-# raspberry PI
+# raspberry PI  ???
 
 git clone https://github.com/oe5rnl/HamMessenger2.git<br>
 <br>
