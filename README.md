@@ -41,7 +41,8 @@ MESHCOM: https://wiki.oevsv.at/wiki/Kategorie:MeshCom
 # HamMessenger installieren 
 
 <br>
-<b>Alle gebrauchsfertige Installationsprogramme findest du im github unter Releases.</b><br>
+<b>Alle gebrauchsfertigen Installationsprogramme findest du im github unter Releases<br>
+Rechts neben dem Sourcecode.</b><br>
 Nach der Installation müssen beim ersten Start im Tab Setup zumindest das Rufzeichen, Name, QTH, Broadcast IP und Hamnet IP eingegeben werden.
 <br><br>
 
