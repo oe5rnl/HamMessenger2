@@ -90,26 +90,26 @@ kann die Installation vom Sourcecode probiert werden.
 ```bash
 
 apt-get install git
-git clone https://github.com/oe5rnl/HamMessenger2.git<br>
-<br>
-pip install python<br>
-pip install pyqt5<br>
-pip install qdarkstyle<br>
-pip install pysondb<br>
-pip install simpleaudio<br>
-<br><br>
-```
+git clone https://github.com/oe5rnl/HamMessenger2.git
 
+pip install python
+pip install pyqt5
+pip install qdarkstyle
+pip install pysondb
+pip install simpleaudio
+
+```
+<br>
 Die folgenden Dateien werden normalerweise vom Installer angelegt.<br>
 In Fall der manuellen Installation müssen aus sie aus dem Verzeichnis HamMessenger2 <br>
 in das Verzeihnis APPDATE\Roaming\HamMessenger2 des Users kopiert werden:<br>
 <br>
 ```bash
 
-mkdir C:\Users\reinh\AppData\Roaming\HamMessenger2<br>
-mkdir C:\Users\reinh\AppData\Roaming\HamMessenger2\res<br>
-copy res* C:\Users\reinh\AppData\Roaming\HamMessenger2\res<br>
-copy groups.ini C:\Users\reinh\AppData\Roaming\HamMessenger2<br>
+mkdir C:\Users\reinh\AppData\Roaming\HamMessenger2
+mkdir C:\Users\reinh\AppData\Roaming\HamMessenger2\res
+copy res* C:\Users\reinh\AppData\Roaming\HamMessenger2\res
+copy groups.ini C:\Users\reinh\AppData\Roaming\HamMessenger2
 ```
 <br>
 Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation geladen.<br>
@@ -146,9 +146,7 @@ python3 ./HamManager2.py
 Sollte identisch zu Linux sein.
 
 todo - Wer kann da know-how beisteuern?<br>
-<br>
-
-<br>
+<br><br>
 
 
 # Erzeugen der Installer Programme
@@ -161,47 +159,61 @@ Das Erzeugen des Installers erfolgt in drei Schritten:<br>
 
 
 Kopieren von Dateien in das Verzeichnis dist<br><br>
+```bash
+
     cd HamMessenger2
-    cp main.ui dist/<br>
-    cp newgroup.ui dist/<br>
-    cp groups.ini dist/<br>
-    mkdir prod<br>
+    cp main.ui dist/
+    cp newgroup.ui dist/
+    cp groups.ini dist/
+    mkdir prod
+```
 <br>
 Erzeugen eines Packages mit pyinstaller<br>
+```bash
+
     pip install pyinstaller<br><br>
     pyinstaller --onefile HamMessenger2.py<br>
+```
 <br>
 Erzeugen des Setupprogrammes mit NSIS Menu<br>
+```
     Start NSIS Menu<br>
     Edit Version Info<br>
     Compile NSI scripts: HamMessenger2.nsi<br>
     Ergebnis steht im Verzeichnis builder
     Mit dem Programm "HM NIS Edit" kann die nsi date bearbeitet werden.<br>
-
+```
 
 
 ## Linux (Ubuntu, Mint, Ubuntu)
 
 Installation wie oben unter Linux beschrieben, dann<br>
 
+```bash
 pip3 install pyinstaller<br>
+
+```
 ev. pyinstaller in den PATH einfügen.<bR>
 
-./make_runtime x.x.x erzeugt ein tar.gz File in der Form HamMessenger2-L.x.x.x.tar.gz<br>
-
+```bash
+./make_runtime x.x.x 
+```
+erzeugt ein tar.gz File in der Form HamMessenger2-L.x.x.x.tar.gz<br>
 <br>
-zb.: ./make_runtime 0.1.57c<br>
+zb.: `./make_runtime 0.1.57c`<br>
 
 Das Ergebnis tar.gz liegt im prod Verzeischnis.<br>
 
 <br>
 Am Ziel PC:<br>
 
+```bash
+
 tar xvf HamMessenger2-U.x.x.x.tar.gz
 
 cd HamMessenger2<br>
 ./HamMessenger2
-
+```
 
 <br>
 
