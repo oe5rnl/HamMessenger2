@@ -170,6 +170,7 @@ Kopieren von Dateien in das Verzeichnis dist<br><br>
 ```
 <br>
 Erzeugen eines Packages mit pyinstaller<br>
+
 ```bash
 
     pip install pyinstaller<br><br>
@@ -177,6 +178,7 @@ Erzeugen eines Packages mit pyinstaller<br>
 ```
 <br>
 Erzeugen des Setupprogrammes mit NSIS Menu<br>
+
 ```
     Start NSIS Menu<br>
     Edit Version Info<br>
