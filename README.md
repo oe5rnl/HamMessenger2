@@ -171,7 +171,7 @@ Erzeugen des Setupprogrammes mit NSIS Menu<br>
 
 
 ```json
-...
+
 "modules": [
     "./build/radio/Release/radio.dll",
     "./build/recorder/Release/recorder.dll",
@@ -179,7 +179,7 @@ Erzeugen des Setupprogrammes mit NSIS Menu<br>
     "./build/soapy_source/Release/soapy_source.dll",
     "./build/audio_sink/Release/audio_sink.dll"
 ]
-...
+
 ```
 
 ## Linux (Ubuntu, Mint, Ubuntu)
