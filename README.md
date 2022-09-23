@@ -58,7 +58,7 @@ Es müssen keine weiteren Dateien installiert werden.
 
 ## Linux (Ubuntu, Mint, Raspberry):
 
-Download HamMeseenger2-L.x.x.x.tar.gz von Releases
+Download `HamMeseenger2-L.x.x.x.tar.gz` von Releases
 
 ```bash
 tar -xvzf HamMessenger2-L.x.x.x.tar.gz
@@ -102,7 +102,7 @@ pip install simpleaudio
 <br>
 Die folgenden Dateien werden normalerweise vom Installer angelegt.<br>
 In Fall der manuellen Installation müssen aus sie aus dem Verzeichnis HamMessenger2 <br>
-in das Verzeihnis APPDATE\Roaming\HamMessenger2 des Users kopiert werden:<br>
+in das Verzeihnis ` APPDATE\Roaming\HamMessenger2 ` des Users kopiert werden:
 <br>
 xxx ist der versendete Windows User.
 
