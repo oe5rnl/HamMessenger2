@@ -24,7 +24,7 @@ Getestet wurde das neue Programm auf folgenden Betriebssystemen:<br>
 * Ubuntu        22.04 LTS   
 * Mint           5.15.0-47-generic
 * raspberry Pi  Raspian GNU/Linux 11 (bullseye) 32 Bit, 64 Bit nicht getestet
-* Mac           Test noch offen
+* Mac           tw. getestet
 * Windows       10 
 * Windows       11
 ```
@@ -51,9 +51,9 @@ Nach der Installation müssen beim ersten Start im Tab Setup zumindest das Rufze
 ## WINDOWS
 
 <br>
-Download und install SetupHamMeseenger2-W.x.x.x.exe von Releases
+Download und install SetupHamMeseenger2-W.x.x.x.exe aus dem Bereich Releases.
 
-Es müssen keine Pakete mit pip werden.
+Es müssen keine weietren Dateien installiert werden.
 
 <br>
 
@@ -105,16 +105,17 @@ Die folgenden Dateien werden normalerweise vom Installer angelegt.<br>
 In Fall der manuellen Installation müssen aus sie aus dem Verzeichnis HamMessenger2 <br>
 in das Verzeihnis APPDATE\Roaming\HamMessenger2 des Users kopiert werden:<br>
 <br>
+xxx ist der versendete Windows User.
 
 ```bash
 
-mkdir C:\Users\reinh\AppData\Roaming\HamMessenger2
-mkdir C:\Users\reinh\AppData\Roaming\HamMessenger2\res
-copy res* C:\Users\reinh\AppData\Roaming\HamMessenger2\res
-copy groups.ini C:\Users\reinh\AppData\Roaming\HamMessenger2
+mkdir C:\Users\xxx\AppData\Roaming\HamMessenger2
+mkdir C:\Users\xxx\AppData\Roaming\HamMessenger2\res
+copy res\* C:\Users\xxxx\AppData\Roaming\HamMessenger2\res
+copy groups.ini C:\Users\xxxAppData\Roaming\HamMessenger2
 ```
 <br>
-Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation geladen.<br>
+Weitere benötigte Dateien werden automatisch vom Basisverzeichnis der Applikation geladen.<br>
 <br>
 
 ## Linux (Ubuntu, Mint, Raspberry pi)
@@ -155,12 +156,12 @@ todo - Wer kann da know-how beisteuern?<br>
 
 ## Windows
 
-Installation wie oben unter Windows beschrieben.<br>
+Zuerst Installation des Programms wie oben unter Windows beschrieben.<br>
 <br>
 Das Erzeugen des Installers erfolgt in drei Schritten:<br>
 
 
-Kopieren von Dateien in das Verzeichnis dist<br><br>
+Kopieren von Dateien in das Verzeichnis dist<br>
 ```bash
 
     cd HamMessenger2
