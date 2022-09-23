@@ -112,8 +112,11 @@ Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation ge
 
 ## Linux (Ubuntu, Mint, Raspberry pi)
 
-git clone https://github.com/oe5rnl/HamMessenger2.git<br>
-<br>
+```bash
+
+git clone https://github.com/oe5rnl/HamMessenger2.git
+
+```
 sudo apt-get -y install build-essential<br>
 sudo apt-get -y install python3 python3-pip git<br>
 sudo apt-get -y install python3-dev libasound2-dev<br>
@@ -170,17 +173,6 @@ Erzeugen des Setupprogrammes mit NSIS Menu<br>
     Mit dem Programm "HM NIS Edit" kann die nsi date bearbeitet werden.<br>
 
 
-```json
-
-"modules": [
-    "./build/radio/Release/radio.dll",
-    "./build/recorder/Release/recorder.dll",
-    "./build/rtl_tcp_source/Release/rtl_tcp_source.dll",
-    "./build/soapy_source/Release/soapy_source.dll",
-    "./build/audio_sink/Release/audio_sink.dll"
-]
-
-```
 
 ## Linux (Ubuntu, Mint, Ubuntu)
 
