@@ -20,6 +20,7 @@ Er kann über den Link http://news.ampr.at/?page_id=462 aus dem HAMNET geladen w
 Getestet wurde das neue Programm auf folgenden Betriebssystemen:<br>
 <br>
 
+
 * Ubuntu        20.04 LTS   
 * Ubuntu        22.04 LTS   
 * Mint           5.15.0-47-generic
@@ -27,6 +28,7 @@ Getestet wurde das neue Programm auf folgenden Betriebssystemen:<br>
 * Mac           Test noch offen
 * Windows       10 
 * Windows       11
+
 
 Anregungen und gefundene Fehler bitte im github als Issue melden.
 
@@ -37,6 +39,8 @@ HAMNET: https://wiki.oevsv.at/wiki/Kategorie:Digitaler_Backbone
 MESHCOM: https://wiki.oevsv.at/wiki/Kategorie:MeshCom
 
 <br>
+
+
 
 # HamMessenger installieren 
 
@@ -70,7 +74,6 @@ starten mit:
 Es müssen keine Pakete mit pip oder apt installiert werden.
 
 <br>
-
 
 ## Mac
 todo - Wer kann da know how-beisteuern?<br><br>
@@ -147,6 +150,7 @@ Installation wie oben unter Windows beschrieben.<br>
 <br>
 Das Erzeugen des Installers erfolgt in drei Schritten:<br>
 
+
 Kopieren von Dateien in das Verzeichnis dist<br><br>
     cd HamMessenger2
     cp main.ui dist/<br>
@@ -166,6 +170,17 @@ Erzeugen des Setupprogrammes mit NSIS Menu<br>
     Mit dem Programm "HM NIS Edit" kann die nsi date bearbeitet werden.<br>
 
 
+```json
+...
+"modules": [
+    "./build/radio/Release/radio.dll",
+    "./build/recorder/Release/recorder.dll",
+    "./build/rtl_tcp_source/Release/rtl_tcp_source.dll",
+    "./build/soapy_source/Release/soapy_source.dll",
+    "./build/audio_sink/Release/audio_sink.dll"
+]
+...
+```
 
 ## Linux (Ubuntu, Mint, Ubuntu)
 
@@ -195,5 +210,5 @@ cd HamMessenger2<br>
 ## Info
 
 
-Sollte die Anleitung Fehler enthalten - bitte um Info in de issues am github!.
+Sollte die Anleitung Fehler enthalten - bitte ein issue im github anlegen.
 
