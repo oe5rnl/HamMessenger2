@@ -173,16 +173,16 @@ Erzeugen eines Packages mit pyinstaller<br>
 
 ```bash
 
-    pip install pyinstaller<br><br>
-    pyinstaller --onefile HamMessenger2.py<br>
+    pip install pyinstaller
+    pyinstaller --onefile HamMessenger2.py
 ```
 <br>
 Erzeugen des Setupprogrammes mit NSIS Menu<br>
 
 ```
-    Start NSIS Menu<br>
-    Edit Version Info<br>
-    Compile NSI scripts: HamMessenger2.nsi<br>
+    Start NSIS Menu
+    Edit Version Info
+    Compile NSI scripts: HamMessenger2.nsi
     Ergebnis steht im Verzeichnis builder
     Mit dem Programm "HM NIS Edit" kann die nsi date bearbeitet werden.<br>
 ```
@@ -193,7 +193,7 @@ Erzeugen des Setupprogrammes mit NSIS Menu<br>
 Installation wie oben unter Linux beschrieben, dann<br>
 
 ```bash
-pip3 install pyinstaller<br>
+pip3 install pyinstaller
 
 ```
 ev. pyinstaller in den PATH einfügen.<bR>
