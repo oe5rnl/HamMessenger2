@@ -101,8 +101,9 @@ pip install simpleaudio
 ```
 <br>
 Die folgenden Dateien werden normalerweise vom Installer angelegt.<br>
-In Fall der manuellen Installation müssen aus sie aus dem Verzeichnis HamMessenger2 <br>
-in das Verzeihnis ` APPDATE\Roaming\HamMessenger2 ` des Users kopiert werden:
+In Fall der manuellen Installation müssen aus sie aus dem Verzeichnis HamMessenger2
+
+in das Verzeihnis `APPDATE\Roaming\HamMessenger2` des Users kopiert werden:
 <br>
 xxx ist der versendete Windows User.
 
