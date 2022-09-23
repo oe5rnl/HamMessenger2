@@ -116,7 +116,6 @@ Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation ge
 
 git clone https://github.com/oe5rnl/HamMessenger2.git
 
-```
 sudo apt-get -y install build-essential<br>
 sudo apt-get -y install python3 python3-pip git<br>
 sudo apt-get -y install python3-dev libasound2-dev<br>
@@ -129,7 +128,7 @@ pip3 install qdarkstyle<br>
 pip3 install pysondb<br>
 pip3 install simpleaudio<br>
 
-
+```
 cd HamManager2<br>
 python3 ./HamManager2.py
 
