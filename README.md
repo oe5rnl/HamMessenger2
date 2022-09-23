@@ -1,7 +1,5 @@
 
 
-<br>
-
 # HAMGO Messenger2 Client
 
 
@@ -64,7 +62,6 @@ Download HamMeseenger2-L.x.x.x.tar.gz von Releases
 
 ```bash
 tar -xvzf HamMessenger2-L.x.x.x.tar.gz
-
 cd HamMessenger2-L.x.x.x
 ```
 
@@ -77,8 +74,8 @@ Es müssen keine Pakete mit pip oder apt installiert werden.
 <br>
 
 ## Mac
-todo - Wer kann da know how-beisteuern?<br><br>
-Die installation erfolgt derzeit wie unter "Installation from Source" beschrieben.
+Die installation erfolgt derzeit wie unter "Installation from Source" beschrieben.<br><br>
+todo - Wer kann da know how-beisteuern?<br>
 <br>
 
 
@@ -90,6 +87,8 @@ kann die Installation vom Sourcecode probiert werden.
 <br><br>
 
 ## Windows 
+```bash
+
 apt-get install git
 git clone https://github.com/oe5rnl/HamMessenger2.git<br>
 <br>
@@ -99,14 +98,19 @@ pip install qdarkstyle<br>
 pip install pysondb<br>
 pip install simpleaudio<br>
 <br><br>
+```
+
 Die folgenden Dateien werden normalerweise vom Installer angelegt.<br>
 In Fall der manuellen Installation müssen aus sie aus dem Verzeichnis HamMessenger2 <br>
 in das Verzeihnis APPDATE\Roaming\HamMessenger2 des Users kopiert werden:<br>
 <br>
+```bash
+
 mkdir C:\Users\reinh\AppData\Roaming\HamMessenger2<br>
 mkdir C:\Users\reinh\AppData\Roaming\HamMessenger2\res<br>
 copy res* C:\Users\reinh\AppData\Roaming\HamMessenger2\res<br>
 copy groups.ini C:\Users\reinh\AppData\Roaming\HamMessenger2<br>
+```
 <br>
 Weitere benötigte Dateien werden direkt vom Basisverzeichnis der Applikation geladen.<br>
 <br>
