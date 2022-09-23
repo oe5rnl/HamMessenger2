@@ -18,6 +18,7 @@ Er kann über den Link http://news.ampr.at/?page_id=462 aus dem HAMNET geladen w
 Getestet wurde das neue Programm auf folgenden Betriebssystemen:<br>
 <br>
 
+```
 
 * Ubuntu        20.04 LTS   
 * Ubuntu        22.04 LTS   
@@ -26,7 +27,7 @@ Getestet wurde das neue Programm auf folgenden Betriebssystemen:<br>
 * Mac           Test noch offen
 * Windows       10 
 * Windows       11
-
+```
 
 Anregungen und gefundene Fehler bitte im github als Issue melden.
 
@@ -214,7 +215,7 @@ Am Ziel PC:<br>
 
 tar xvf HamMessenger2-U.x.x.x.tar.gz
 
-cd HamMessenger2<br>
+cd HamMessenger2
 ./HamMessenger2
 ```
 
