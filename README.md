@@ -52,7 +52,7 @@ Nach der Installation müssen beim ersten Start im Tab Setup zumindest das Rufze
 ## WINDOWS
 
 <br>
-Download und install `SetupHamMeseenger2-W.x.x.x.exe` von Releases
+Download und install SetupHamMeseenger2-W.x.x.x.exe von Releases
 
 Es müssen keine Pakete mit pip werden.
 
@@ -62,13 +62,15 @@ Es müssen keine Pakete mit pip werden.
 
 Download HamMeseenger2-L.x.x.x.tar.gz von Releases
 
+```bash
 tar -xvzf HamMessenger2-L.x.x.x.tar.gz
 
 cd HamMessenger2-L.x.x.x
+```
 
 starten mit:
 
-./HamMessenger2
+`./HamMessenger2`
 
 Es müssen keine Pakete mit pip oder apt installiert werden.
 
