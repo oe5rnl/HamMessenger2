@@ -50,10 +50,9 @@ Nach der Installation müssen beim ersten Start im Tab Setup zumindest das Rufze
 
 ## WINDOWS
 
-<br>
-Download und install ` SetupHamMeseenger2-W.x.x.x.exe ` aus dem Bereich Releases.
+Download und install `SetupHamMeseenger2-W.x.x.x.exe` aus dem Bereich Releases.
 
-Es müssen keine weietren Dateien installiert werden.
+Es müssen keine weiteren Dateien installiert werden.
 
 <br>
 
