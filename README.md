@@ -43,7 +43,7 @@ MESHCOM: https://wiki.oevsv.at/wiki/Kategorie:MeshCom
 
 # HamMessenger installieren 
 
-<b>Alle gebrauchsfertigen IProgramme findest du im github unter Releases, rechts neben dem Sourcecode.</b><br>
+<b>Alle gebrauchsfertigen Installer und Programme findest du im github unter Releases, rechts neben dem Sourcecode.</b><br>
 <br>
 
 ```
