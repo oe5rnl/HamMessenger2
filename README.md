@@ -139,8 +139,8 @@ pip3 install simpleaudio
 ```
 Asuführen mit:
 ```
-cd HamManager2
-python3 ./HamManager2.py
+cd HamMessenger2
+python3 ./HamMessenger2.py
 ```
 <br>
 
