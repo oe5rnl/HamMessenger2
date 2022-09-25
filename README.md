@@ -124,6 +124,7 @@ Weitere benötigte Dateien werden automatisch vom Basisverzeichnis der Applikati
 
 git clone https://github.com/oe5rnl/HamMessenger2.git
 
+sudo apt-get update
 sudo apt-get -y install build-essential
 sudo apt-get -y install python3 python3-pip git
 sudo apt-get -y install python3-dev libasound2-dev
