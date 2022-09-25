@@ -43,12 +43,13 @@ MESHCOM: https://wiki.oevsv.at/wiki/Kategorie:MeshCom
 
 # HamMessenger installieren 
 
-<b>Alle gebrauchsfertigen Installer und Programme findest du im github unter Releases, rechts neben dem Sourcecode.</b><br>
+<b>Alle gebrauchsfertigen Installer und Programme findest du im github unter Releases, rechts neben dem Sourcecode.<br>
+Dazu auf den Text "Releases" klicken</b>
 <br>
 
 ```
 Windows: Es existiert eine Setup-Programm.
-Linux:   Die Dateinen werden nur mit tar entpackt. Der Aufruf erfolgt dann mit ./HamMessenger
+Linux:   Die Dateinen werden mit tar entpackt. Der Aufruf erfolgt dann mit ./HamMessenger
 MAC:     Wie unter "Installation vom Source Code" beschrieben.
 ```
 <br>
