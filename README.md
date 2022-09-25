@@ -47,9 +47,9 @@ MESHCOM: https://wiki.oevsv.at/wiki/Kategorie:MeshCom
 <br>
 
 ```
-* Windows: Es existiert eine Setup-Programm.<br>
-* Linux:   Die Dateinen werden nur mit tar entpackt. Der Aufruf erfolgt dann mit ./HamMessenger<br> 
-* MAC:     Wie unter "Installation vom Source Code" beschrieben.<br>
+Windows: Es existiert eine Setup-Programm.
+Linux:   Die Dateinen werden nur mit tar entpackt. Der Aufruf erfolgt dann mit ./HamMessenger
+MAC:     Wie unter "Installation vom Source Code" beschrieben.
 ```
 <br>
 Nach der Installation müssen beim ersten Start im Tab Setup zumindest das Rufzeichen, Name, QTH, Broadcast IP und Hamnet IP eingegeben werden.
